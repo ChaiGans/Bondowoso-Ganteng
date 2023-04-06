@@ -13,10 +13,9 @@ def login():
   print("Password: ", end="")
   password = str(input())
   if username_checker (username):
-    count = 0
     for i in range (length(data)):
       if username == data[i][0]:
-        count += 1
+        count = i
     if password == data[count][1]:
       print("Selamat datang,", str(username)+"!")
       print('Masukkan command "help" untuk daftar command yang dapat kamu panggil.')
