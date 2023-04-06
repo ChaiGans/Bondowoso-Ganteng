@@ -1,1 +1,1 @@
-# Bondowoso-tolol
+# semnangat kalian semua abang kakak
