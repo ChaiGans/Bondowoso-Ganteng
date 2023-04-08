@@ -73,6 +73,7 @@ def remove_line_csv(filename, line_number):
             if i != line_number:
                 lines = appending (line,lines)
             i += 1
+
     with open(filename, 'w') as file:
         for line in lines:
             file.write(line)
@@ -81,3 +82,16 @@ def find_line (data, user_name):
     for i in range (length(data)):
         if data[i][0] == user_name:
             return i
+
+def update_csv(filename, row_index, column_index, new_value):
+    data = csvreader (filename)
+    data[row_index][column_index] = new_value
+
+    with open(filename, 'w') as file:
+        for row in data:
+            line = ''
+            for i in range(length (row)):
+                line += str(row[i])
+                if i != length (row) - 1:
+                    line += ';'
+            file.write(line + '\n')
