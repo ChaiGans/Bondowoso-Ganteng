@@ -36,13 +36,22 @@ def csvreader(csv):
                 data = appending(row, data)
                 row = []
                 value = ''
-        if row:
+        if value or row:
+            row = appending(value,row)
             data = appending(row, data)
     return data
+
+def appendrow_candi(idx, pembuat_candi, pasir, batu, air):
+    with open('candi.csv', 'a') as file:
+        file.write('{};{};{};{};{}\n'.format(idx, pembuat_candi, pasir, batu, air))
 
 def appendrow_user(user_name, password, roles):
     with open('user.csv', 'a') as file:
         file.write('{};{};{}\n'.format(user_name, password, roles))
+
+def appendrow_bahanbangunan(pasir,batu,air):
+    with open('user.csv', 'a') as file:
+        file.write('{};{};{}\n'.format(pasir, batu, air))
 
 def username_checker(username, data):
     count = 0
