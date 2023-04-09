@@ -15,12 +15,12 @@ listbangun=[]
 
 
 # merencanakan pembangunan sesuai jumlah jin pembangun yang ada
-for i in range(length(data_user)):
+for i in range(1,length(data_user)):
     if(data_user[i][2]=="jin_pembangun"):
         c_jin_pembangun+=1
         
         #jika masih ada candi yang perlu dibangun
-        if(not sudah_100 and length(data_candi)<100):
+        if((not sudah_100) and length(data_candi)<101):
 
             #generate bahan yang dibutuhkan
             pasir_butuh=random.randint(1, 5)
@@ -43,21 +43,22 @@ for i in range(length(data_user)):
             listbangun[llist][3]=air_butuh
 
             #cek jika jumlah candi sudah 100 stop
-            if(length(data_candi)+llist+1==100): sudah_100=True
+            if(length(data_candi)+llist+1==101): sudah_100=True
+            #101 karena ada indeks judul
 
 #cek apa bisa dibangun dan beri keluaran
 if(c_jin_pembangun==0):
     print("Bangun gagal. Anda tidak punya jin pembangun. Silahkan summon terlebih dahulu.")
 
-elif (int(data_bahan[0][2]) >= pasir_total and data_bahan[1][2] >= batu_total and data_bahan[2][2] >= air_total):
+elif (int(data_bahan[1][2]) >= pasir_total and data_bahan[2][2] >= batu_total and data_bahan[3][2] >= air_total):
     #update data candi
     for i in range(llist+1):
         appendrow_candi(length(data_candi), listbangun[i][0], listbangun[i][1], listbangun[i][2], listbangun[i][3])
 
     #update sisa bahan
-    update_csv('bahan_bangunan.csv', 0, 2, int(data_bahan[0][2]) - pasir_total)
-    update_csv('bahan_bangunan.csv', 1, 2, int(data_bahan[1][2]) - batu_total)
-    update_csv('bahan_bangunan.csv', 2, 2, int(data_bahan[2][2]) - air_total)
+    update_csv('bahan_bangunan.csv', 1, 2, int(data_bahan[1][2]) - pasir_total)
+    update_csv('bahan_bangunan.csv', 2, 2, int(data_bahan[2][2]) - batu_total)
+    update_csv('bahan_bangunan.csv', 3, 2, int(data_bahan[3][2]) - air_total)
     
     #keluaran
     print("Mengerahkan",c_jin_pembangun," jin untuk membangun candi dengan total bahan",pasir_total,"pasir,",batu_total,"batu, dan",air_total,"air.")
@@ -72,14 +73,14 @@ else:
 
     adasebelum=False #cek koma
 
-    if((pasir_total-data_bahan[0][2])>0):
-        print(pasir_total-data_bahan[0][2]," pasir",end="")
+    if((pasir_total-data_bahan[1][2])>0):
+        print(pasir_total-data_bahan[1][2]," pasir",end="")
         adasebelum=True
-    if((batu_total-data_bahan[1][2])>0):
+    if((batu_total-data_bahan[2][2])>0):
         if adasebelum: print(",",end="")
-        print(batu_total-data_bahan[1][2]," batu",end="")
+        print(batu_total-data_bahan[2][2]," batu",end="")
         adasebelum=True
-    if((air_total-data_bahan[2][2])>0):
+    if((air_total-data_bahan[3][2])>0):
         if adasebelum: print(",",end="")
-        print(air_total-data_bahan[2][2]," air",end="")
+        print(air_total-data_bahan[3][2]," air",end="")
     print(".")
