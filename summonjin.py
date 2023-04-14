@@ -1,4 +1,3 @@
-import csv
 from builtin import length
 from builtin import appendrow_user
 from builtin import username_checker, csvreader

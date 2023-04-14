@@ -1,10 +1,8 @@
-import csv
 from builtin import length
 from builtin import appendrow_user
 from builtin import username_checker, remove_line_csv, find_line, csvreader
 
 data = csvreader('user.csv')
-
 # NOTE : Masih belum ngeremove candi-candi yang dibuat sama jin
 print("Masukkan username jin: ", end="")
 user_name = str(input())
