@@ -41,17 +41,25 @@ def csvreader(csv):
             data = appending(row, data)
     return data
 
-def appendrow_candi(idx, pembuat_candi, pasir, batu, air):
-    with open('candi.csv', 'a') as file:
-        file.write('{};{};{};{};{}\n'.format(idx, pembuat_candi, pasir, batu, air))
 
-def appendrow_user(user_name, password, roles):
-    with open('user.csv', 'a') as file:
-        file.write('{};{};{}\n'.format(user_name, password, roles))
+data_user = csvreader('user.csv')
+data_candi = csvreader('candi.csv')
+data_bahanbangunan = csvreader('bahan_bangunan.csv')
 
-def appendrow_bahanbangunan(pasir,batu,air):
-    with open('bahan_bangunan.csv', 'a') as file:
-        file.write('{};{};{}\n'.format(pasir, batu, air))
+def appendrow_candi(data, idx, pembuat_candi, pasir, batu, air):
+    list_dummy = [idx, pembuat_candi, pasir, batu, air]
+    data = appending(list_dummy, data)
+    return data
+
+def appendrow_user(data, user_name, password, roles):
+    list_dummy = [user_name, password, roles]
+    data = appending(list_dummy, data)
+    return data
+
+def appendrow_bahanbangunan(data,pasir,batu,air):
+    list_dummy = [pasir,batu,air]
+    data = appending(list_dummy, data)
+    return data
 
 def username_checker(username, data):
     count = 0
@@ -64,13 +72,18 @@ def username_checker(username, data):
         return True
 
 def remove_row(data, user_name):
-    listbaru = [0 for i in range(length(data) - 1)]
+    count = 0
+    for i in range(length(data)):
+        if data[i][0] != user_name:
+            count += 1
+    listbaru = [0 for i in range(count)]
     count = 0
     for i in range(length(data)):
         if data[i][0] != user_name:
             listbaru[count] = data[i]
             count += 1
     return listbaru
+
 
 def remove_line_csv(filename, line_number):
     with open(filename, 'r') as file:
@@ -90,15 +103,11 @@ def find_line (data, user_name):
         if data[i][0] == user_name:
             return i
 
-def update_csv(filename, row_index, column_index, new_value):
-    data = csvreader (filename)
+def update_list(data, row_index, column_index, new_value):
     data[row_index][column_index] = new_value
+    return data
 
-    with open(filename, 'w') as file:
-        for row in data:
-            line = ''
-            for i in range(length (row)):
-                line += str(row[i])
-                if i != length (row) - 1:
-                    line += ';'
-            file.write(line + '\n')
+def cek_current_list(): 
+    print(data_user)
+    print(data_bahanbangunan)
+    print(data_candi)

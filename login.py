@@ -1,16 +1,12 @@
-import csv
-from builtin import length
-from builtin import username_checker, csvreader
-
-data = csvreader('user.csv')
+import builtin
 
 print("Username: ", end="")
 username = str(input())
 print("Password: ", end="")
 password = str(input())
 
-if not username_checker(username,data):
-    for i in range(length(data)):
+if not builtin.username_checker(username,builtin.data_user):
+    for i in range(builtin.length(data)):
         if username == data[i][0]:
             count = i
     if password == data[count][1]:
