@@ -10,7 +10,7 @@ def laporancandi ():
     max_price = 0
     id_termahal = "-"
     id_termurah = "-"
-    for i in range(105):
+    for i in range(length(data_candi)):
         if data_candi[i][2] != 0 and data_candi[i][3]  != 0 and data_candi[i][4]  != 0:
             banyak_candi += 1
             pasir += data_candi[i][2]
