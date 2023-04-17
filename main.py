@@ -1,6 +1,9 @@
 from summonjin import summonjin
 from bangun import bangun
 from kumpul import kumpul
+from hapusjin import hapusjin
+import builtin
+
 # user_input = str(input())  
 # if user_input == "login":
 #     x = login()
@@ -13,7 +16,6 @@ from kumpul import kumpul
 #             user_input = str(input())
 #         logout()
 
-summonjin()
-bangun()
-kumpul()
+print(builtin.data_user)
+print(builtin.data_candi)
     
