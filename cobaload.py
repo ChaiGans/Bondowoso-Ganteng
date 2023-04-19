@@ -70,6 +70,6 @@ def bukacsv_bahan(nama_lokasi):
     f.close()
 
 def load():
-    bukacsv_user(tempat_variable.lokasi_file+"user.csv")
-    bukacsv_candi(tempat_variable.lokasi_file+"candi.csv")
-    bukacsv_bahan(tempat_variable.lokasi_file+"bahan_bangunan.csv")
+    bukacsv_user(tempat_variable.lokasi_file+"\\user.csv")
+    bukacsv_candi(tempat_variable.lokasi_file+"\\candi.csv")
+    bukacsv_bahan(tempat_variable.lokasi_file+"\\bahan_bangunan.csv")
