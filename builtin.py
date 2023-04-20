@@ -1,4 +1,6 @@
 # Builtin function / function yang sering dipake dicopas ke sini biar tinggal dipanggil
+import tempat_variable
+
 
 def length(list):
     count = 0
