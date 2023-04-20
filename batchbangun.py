@@ -48,7 +48,11 @@ elif (int(tempat_variable.data_bahanbangunan[1][2]) >= pasir_total and int(tempa
     #update data candi
     for i in range(neff_listbangun):
         #id candi bukan panjang array
-        appendrow_candi(str(length(data_candi)), listbangun[i][0], listbangun[i][1], listbangun[i][2], listbangun[i][3])
+        for j in range (tempat_variable.neff_data_candi):
+            if tempat_variable.data_candi[j][2]==0 and tempat_variable.data_candi[j][3]==0 and tempat_variable.data_candi[j][4]==0:
+                tempat_variable.data_candi[j][2] = pasir_butuh
+                tempat_variable.data_candi[j][3] = batu_butuh
+                tempat_variable.data_candi[j][4] = air_butuh
 
     #update sisa bahan
     tempat_variable.data_bahanbangunan[1][2]=str(int(tempat_variable.data_bahanbangunan[1][2]) - pasir_total)

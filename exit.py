@@ -13,4 +13,4 @@ while not input_valid:
     else:
         print("Input tidak valid. Silahkan masukan 'y' atau 'n'")
         
-exit_program()
+# exit_program()

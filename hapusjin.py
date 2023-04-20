@@ -11,16 +11,16 @@ def hapusjin():
             print("Jin telah berhasil dihapus dari alam gaib.")
             count = 0
             for i in range(tempat_variable.neff_data_user):
-                if data[i][0] != user_name:
+                if tempat_variable.data_user[i][0] != user_name:
                     count += 1
             listbaru = [0 for i in range(count)]
             count = 0
             for i in range(tempat_variable.neff_data_user):
-                if data[i][0] != user_name:
-                    listbaru[count] = data[i]
+                if tempat_variable.data_user[i][0] != user_name:
+                    listbaru[count] = tempat_variable.data_user[i]
                     count += 1
             tempat_variable.data_user = listbaru
-            for i in range (length(tempat_variable.data_candi)):
+            for i in range (tempat_variable.neff_data_candi):
                 if not username_checker (user_name, tempat_variable.data_candi):
                     tempat_variable.data_candi[i][1] = "0"
                     tempat_variable.data_candi[i][2] = 0
