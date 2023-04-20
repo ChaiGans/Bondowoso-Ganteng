@@ -1,2 +1,4 @@
+import tempat_variable
+
 def logout():
-    exit()
+    tempat_variable.role_user="-1"

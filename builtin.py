@@ -48,24 +48,19 @@ data_user = csvreader('user.csv')
 data_candi = csvreader('candi.csv')
 data_bahanbangunan = csvreader('bahan_bangunan.csv')
 
-def appendrow_candi(data, idx, pembuat_candi, pasir, batu, air):
+def appendrow_candi(idx, pembuat_candi, pasir, batu, air):
     list_dummy = [idx, pembuat_candi, pasir, batu, air]
-    data = appending(list_dummy, data)
-    return data
+    tempat_variable.data_candi[tempat_variable.neff_data_candi]=list_dummy
+    tempat_variable.neff_data_candi+=1
 
-def appendrow_user(data, user_name, password, roles):
+def appendrow_user(user_name, password, roles):
     list_dummy = [user_name, password, roles]
-    data = appending(list_dummy, data)
-    return data
-
-def appendrow_bahanbangunan(data,pasir,batu,air):
-    list_dummy = [pasir,batu,air]
-    data = appending(list_dummy, data)
-    return data
+    tempat_variable.data_user[tempat_variable.neff_data_user]=list_dummy
+    tempat_variable.neff_data_user+=1
 
 def username_checker(username, data):
     count = 0
-    for i in range(length(data)):
+    for i in range(1,tempat_variable.neff_data_user):
         if data[i][0] == username:
             count += 1
     if count >= 1:
@@ -100,8 +95,9 @@ def remove_line_csv(filename, line_number):
         for line in lines:
             file.write(line)
 
+#cuma buat cari username kan ?
 def find_line (data, user_name):
-    for i in range (length(data)):
+    for i in range (1,tempat_variable.neff_data_user):
         if data[i][0] == user_name:
             return i
 

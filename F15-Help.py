@@ -1,9 +1,7 @@
-from builtin import csvreader, length
 from tempat_variable import role_user
 
-data_user = csvreader('user.csv')
-
-def help(): 
+#gaboleh bikin dengan nama help itu udh ada ntar malah redefining
+def helpp(): 
         if (role_user == "bandung_bondowoso"): 
             print("=========== HELP =========")
             print("1. logout \n   untuk keluar dari akun yang digunakan sekarang")

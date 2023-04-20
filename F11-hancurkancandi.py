@@ -1,22 +1,23 @@
-from builtin import csvreader, length
+import tempat_variable
 
-data_candi = csvreader('candi.csv')
-
-
-def hancurkancandi(data_candi): 
+def hancurkancandi():
+    #array belum dimundurin
+    #mundurin : geser array, ubah neff
+    ditemukan=False
     IDCandi = int(input("Masukkan ID Candi: ")) 
-    for i in range(length(data_candi)):
-        if (data_candi [i][0] == str(IDCandi)): 
-             konfirmasi = input(f"Apakah anda yakin ingin menghancurkan candi ID: {IDCandi} (Y/N)?")
-             if (konfirmasi == "Y" or konfirmasi == "N"):
+    for i in range(tempat_variable.neff_data_candi):
+        if (tempat_variable.data_candi[i][0] == str(IDCandi)):
+            ditemukan=True
+            konfirmasi = input(f"Apakah anda yakin ingin menghancurkan candi ID: {IDCandi} (Y/N)?")
+            if (konfirmasi == "Y" or konfirmasi == "N"):
                 if (konfirmasi == "Y"): 
                     for j in range(5): 
-                        data_candi[i][j] = 0
+                        tempat_variable.data_candi[i][j] = "0"
                 else: 
                     print("Candi tidak jadi dihancurkan")
                     break
-             else:
+            else:
                 print("Kode Salah")
-        else:
-            print("Tidak ada candi dengan ID tersebut.")
+    if ditemukan==False :
+        print("Tidak ada candi dengan ID tersebut.")
     

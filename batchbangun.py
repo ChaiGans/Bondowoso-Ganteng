@@ -1,26 +1,23 @@
-import random
-from builtin import length, csvreader,update_csv,appendrow_candi
+import random,tempat_variable
+from builtin import length,appendrow_candi
 
-data_user=csvreader('user.csv')
-data_bahan=csvreader('bahan_bangunan.csv')
-data_candi=csvreader('candi.csv')
 c_jin_pembangun = 0
 pasir_total = 0
 batu_total = 0
 air_total = 0
-sudah_100=False
-listbangun=[]
+sudah_100 = False
+listbangun = [["0" for i in range(5)] for i in range(105)]
+neff_listbangun = 0
 #berisikan informasi candi jika berhasil dibangun
 #ukuran [i][4]
 
 
 # merencanakan pembangunan sesuai jumlah jin pembangun yang ada
-for i in range(1,length(data_user)):
-    if(data_user[i][2]=="jin_pembangun"):
+for i in range(1,tempat_variable.neff_data_user):
+    if(tempat_variable.data_user[i][2]=="jin_pembangun"):
         c_jin_pembangun+=1
-        
         #jika masih ada candi yang perlu dibangun
-        if((not sudah_100) and length(data_candi)<101):
+        if((not sudah_100) and tempat_variable.neff_data_candi<101):
 
             #generate bahan yang dibutuhkan
             pasir_butuh=random.randint(1, 5)
@@ -30,57 +27,60 @@ for i in range(1,length(data_user)):
             batu_total+=batu_butuh
             air_total+=air_butuh
 
-            # append listbangun
-            titiplist=listbangun
-            llist=length(titiplist)
-            listbangun=[[0 for j in range (4)]for k in range(llist+1)]
-            for j in range(llist):
-                for k in range(0,4):
-                    listbangun[j][k]=titiplist[j][k]
-            listbangun[llist][0]=data_user[i][0]
-            listbangun[llist][1]=pasir_butuh
-            listbangun[llist][2]=batu_butuh
-            listbangun[llist][3]=air_butuh
+            # isi listbangun
+            listbangun[neff_listbangun][0]=tempat_variable.data_user[i][0]
+            listbangun[neff_listbangun][1]=str(pasir_butuh)
+            listbangun[neff_listbangun][2]=str(batu_butuh)
+            listbangun[neff_listbangun][3]=str(air_butuh)
+            neff_listbangun+=1
+
 
             #cek jika jumlah candi sudah 100 stop
-            if(length(data_candi)+llist+1==101): sudah_100=True
-            #101 karena ada indeks judul
+            if(tempat_variable.neff_data_candi+neff_listbangun == 101): sudah_100=True
+            #101 karena ada indeks judul di data candi pusat
 
 #cek apa bisa dibangun dan beri keluaran
 if(c_jin_pembangun==0):
     print("Bangun gagal. Anda tidak punya jin pembangun. Silahkan summon terlebih dahulu.")
 
-elif (int(data_bahan[1][2]) >= pasir_total and data_bahan[2][2] >= batu_total and data_bahan[3][2] >= air_total):
+#ada jin dan bahan cukup
+elif (int(tempat_variable.data_bahanbangunan[1][2]) >= pasir_total and int(tempat_variable.data_bahanbangunan[2][2]) >= batu_total and int(tempat_variable.data_bahanbangunan[3][2]) >= air_total):
     #update data candi
-    for i in range(llist+1):
-        appendrow_candi(length(data_candi), listbangun[i][0], listbangun[i][1], listbangun[i][2], listbangun[i][3])
+    for i in range(neff_listbangun):
+        #id candi bukan panjang array
+        appendrow_candi(str(length(data_candi)), listbangun[i][0], listbangun[i][1], listbangun[i][2], listbangun[i][3])
 
     #update sisa bahan
-    update_csv('bahan_bangunan.csv', 1, 2, int(data_bahan[1][2]) - pasir_total)
-    update_csv('bahan_bangunan.csv', 2, 2, int(data_bahan[2][2]) - batu_total)
-    update_csv('bahan_bangunan.csv', 3, 2, int(data_bahan[3][2]) - air_total)
+    tempat_variable.data_bahanbangunan[1][2]=str(int(tempat_variable.data_bahanbangunan[1][2]) - pasir_total)
+    tempat_variable.data_bahanbangunan[2][2]=str(int(tempat_variable.data_bahanbangunan[2][2]) - batu_total)
+    tempat_variable.data_bahanbangunan[3][2]=str(int(tempat_variable.data_bahanbangunan[3][2]) - air_total)
     
     #keluaran
     print("Mengerahkan",c_jin_pembangun," jin untuk membangun candi dengan total bahan",pasir_total,"pasir,",batu_total,"batu, dan",air_total,"air.")
-    print("Jin berhasil membangun total",llist+1,"candi.")
+    print("Jin berhasil membangun total",neff_listbangun,"candi.")
 
     #KELUARAN JIKA JUMLAH JIN DAN JUMLAH CANDI DIBANGUN TIDAK SAMA KARENA MELEBIHI 100
     #BELUM
 
+#bahan tidak cukup
 else:
-    print("Mengerahkan 22 jin untuk membangun candi dengan total bahan 71 pasir, 89 batu, dan 95 air.")
+    print("Mengerahkan",c_jin_pembangun," jin untuk membangun candi dengan total bahan",pasir_total,"pasir,",batu_total,"batu, dan",air_total,"air.")
     print("Bangun gagal. Kurang",end="")
 
     adasebelum=False #cek koma
-
-    if((pasir_total-data_bahan[1][2])>0):
-        print(pasir_total-data_bahan[1][2]," pasir",end="")
+    temp=0
+    
+    temp=pasir_total-int(tempat_variable.data_bahanbangunan[1][2])
+    if(temp>0):
+        print(temp," pasir",end="")
         adasebelum=True
-    if((batu_total-data_bahan[2][2])>0):
+    temp=batu_total-int(tempat_variable.data_bahanbangunan[2][2])
+    if(temp>0):
         if adasebelum: print(",",end="")
-        print(batu_total-data_bahan[2][2]," batu",end="")
+        print(temp," batu",end="")
         adasebelum=True
-    if((air_total-data_bahan[3][2])>0):
+    temp=air_total-int(tempat_variable.data_bahanbangunan[3][2])
+    if(temp>0):
         if adasebelum: print(",",end="")
-        print(air_total-data_bahan[3][2]," air",end="")
+        print(temp," air",end="")
     print(".")

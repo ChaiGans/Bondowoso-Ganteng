@@ -1,4 +1,4 @@
-import save
+from cobasave import *
 input_valid = False
 
 while not input_valid:
@@ -12,5 +12,5 @@ while not input_valid:
         input_valid = True
     else:
         print("Input tidak valid. Silahkan masukan 'y' atau 'n'")
-
+        
 exit_program()

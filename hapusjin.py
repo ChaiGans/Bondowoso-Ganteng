@@ -1,11 +1,11 @@
-import builtin
+import builtin,tempat_variable
 
 def hapusjin():
     # NOTE : Masih belum ngeremove candi-candi yang dibuat sama jin
     print("Masukkan username jin: ", end="")
     user_name = str(input())
 
-    if not builtin.username_checker (user_name, builtin.data_user):
+    if not builtin.username_checker (user_name, tempat_variable.data_user):
         print("Apakah anda yakin ingin menghapus jin dengan username",user_name,"(Y/N)? ",end="")
         choice = str(input())
         if choice == "Y":
