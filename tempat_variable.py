@@ -7,6 +7,6 @@ neff_data_candi=0
 neff_data_bahanbangunan=0
 
 #data index 0 berisi keterangan 
-data_user=[["0" for i in range(3)] for j in range(1003)]
+data_user=[["0" for i in range(3)] for j in range(103)]
 data_candi=[["0" for i in range(5)] for j in range(103)]
 data_bahanbangunan=[["0"for i in range(3)]for j in range(4)]
