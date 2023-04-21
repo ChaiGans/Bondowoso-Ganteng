@@ -7,7 +7,7 @@ def bukacsv_user(nama_lokasi):
     while(isi!="*"):
         titip=""
         j=k=0
-        while(isi[k]!='*'):
+        while( j<2 or isi[k]!='*'):
             if(isi[k]==';'):
                 tempat_variable.data_user[i][j]=titip
                 titip=""
@@ -30,7 +30,7 @@ def bukacsv_candi(nama_lokasi):
     while(isi!="*"):
         titip=""
         j=k=0
-        while(isi[k]!='*'):
+        while( j<4 or isi[k]!='*'):
             if(isi[k]==';'):
                 tempat_variable.data_candi[i][j]=titip
                 titip=""

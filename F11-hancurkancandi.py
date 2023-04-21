@@ -1,8 +1,11 @@
 import tempat_variable
 
+def hancur(idxhancur):
+    for i in range(idxhancur,tempat_variable.neff_data_candi):
+        tempat_variable.data_candi[i]=tempat_variable.data_candi[i+1]
+
+
 def hancurkancandi():
-    #array belum dimundurin
-    #mundurin : geser array, ubah neff
     ditemukan=False
     IDCandi = int(input("Masukkan ID Candi: ")) 
     for i in range(tempat_variable.neff_data_candi):
@@ -11,13 +14,12 @@ def hancurkancandi():
             konfirmasi = input(f"Apakah anda yakin ingin menghancurkan candi ID: {IDCandi} (Y/N)?")
             if (konfirmasi == "Y" or konfirmasi == "N"):
                 if (konfirmasi == "Y"): 
-                    for j in range(5): 
-                        tempat_variable.data_candi[i][j] = "0"
+                    hancur(i)
+                    tempat_variable.neff_data_candi-=1
                 else: 
                     print("Candi tidak jadi dihancurkan")
                     break
             else:
                 print("Kode Salah")
-    if ditemukan==False :
+    if ditemukan == False :
         print("Tidak ada candi dengan ID tersebut.")
-    

@@ -109,3 +109,11 @@ def cek_current_list():
     print(data_user)
     print(data_bahanbangunan)
     print(data_candi)
+
+def carikosong():
+    ada=[0 for i in range(103)]
+    for i in range(tempat_variable.neff_data_candi):
+        ada[int(tempat_variable.data_candi[i][0])] = 1
+    for i in range(1,103):
+        if(ada[i] == 0):
+            return i

@@ -10,6 +10,8 @@ if not builtin.username_checker(username,tempat_variable.data_user):
         if username == tempat_variable.data_user[i][0]:
             count = i
     if password == tempat_variable.data_user[count][1]:
+        tempat_variable.nama_user= tempat_variable.data_user[count][0]
+        tempat_variable.role_user= tempat_variable.data_user[count][2]
         print("Selamat datang,", str(username)+"!")
         print('Masukkan command "help" untuk daftar command yang dapat kamu panggil.')
     else:
