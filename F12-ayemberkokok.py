@@ -3,7 +3,7 @@ import tempat_variable
 def ayamberkokok():    
     print("Kukuruyuk..Kukuruyuk")
 
-    if (tempat_variable.neff_data_candi< 101): 
+    if (tempat_variable.neff_data_candi >= 100): 
         print("Jumlah Candi:", str(tempat_variable.neff_data_candi))
         print("Selamat, Roro Jonggrang Memenangkan Permainan")
         print("")
