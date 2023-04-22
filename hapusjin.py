@@ -1,6 +1,6 @@
-from builtin import username_checker, remove_row
+from builtin import username_checker, remove_row, csvreader
 import tempat_variable
-
+from F11-hancurkancandi import hancur
 def hapusjin():
     print("Masukkan username jin: ", end="")
     user_name = str(input())
@@ -19,16 +19,14 @@ def hapusjin():
                 if tempat_variable.data_user[i][0] != user_name:
                     listbaru[count] = tempat_variable.data_user[i]
                     count += 1
-            tempat_variable.data_user = listbaru
+            for i in range (tempat_variable.neff_data_user-1):
+                tempat_variable.data_user[i] = listbaru [i]
+            tempat_variable.data_user[tempat_variable.neff_data_user-1] = ["0" for i in range(3)]
             for i in range (tempat_variable.neff_data_candi):
                 if not username_checker (user_name, tempat_variable.data_candi):
-                    tempat_variable.data_candi[i][1] = "0"
-                    tempat_variable.data_candi[i][2] = 0
-                    tempat_variable.data_candi[i][3] = 0
-                    tempat_variable.data_candi[i][4] = 0
+                    hancur(i+1)
         elif choice == "N":
             print("Jin tidak jadi dihapus dari alam gaib.")
     else:
         print("Tidak ada jin dengan username tersebut.")
-
 
