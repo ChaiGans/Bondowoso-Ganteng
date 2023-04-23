@@ -78,15 +78,15 @@ def batchbangun():
         
         temp=pasir_total-int(tempat_variable.data_bahanbangunan[1][2])
         if(temp>0):
-            print(temp," pasir",end="")
+            print("",temp,"pasir",end="")
             adasebelum=True
         temp=batu_total-int(tempat_variable.data_bahanbangunan[2][2])
         if(temp>0):
             if adasebelum: print(",",end="")
-            print(temp," batu",end="")
+            print("",temp,"batu",end="")
             adasebelum=True
         temp=air_total-int(tempat_variable.data_bahanbangunan[3][2])
         if(temp>0):
             if adasebelum: print(",",end="")
-            print(temp," air",end="")
+            print("",temp,"air",end="")
         print(".")

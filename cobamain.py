@@ -166,4 +166,4 @@ while(True):
     elif(inp=="help"): helpp()
     else:
         helpp()
-    inp=input()
+    inp=input(">>> ")
