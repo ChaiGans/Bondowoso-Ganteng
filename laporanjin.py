@@ -4,38 +4,53 @@ import tempat_variable
 def jin_malas_rajin():
     list_jin_frekuensi = [["", 0] for i in range(tempat_variable.neff_data_user - 3)]
     j = 0
+    list_jin_frekuensi_neff = 0
     for i in range(3, tempat_variable.neff_data_user):
-        list_jin_frekuensi[j][0] = tempat_variable.data_user[i][0]
-        j += 1
+        if tempat_variable.data_user[i][2] == "jin_pembangun":
+            list_jin_frekuensi[j][0] = tempat_variable.data_user[i][0]
+            j += 1
+            list_jin_frekuensi_neff += 1
+    # count how manu ['', 0]
+    count = 0
+    for i in range(list_jin_frekuensi_neff):
+        if list_jin_frekuensi[i] == ['',0]:
+            count += 1
+    # replace those to new list
+    list_jin_frekuensi_baru = [["", 0] for i in range(list_jin_frekuensi_neff-count)]
+    list_jin_frekuensi_baru_neff = 0
+    j = 0
+    for i in range (list_jin_frekuensi_neff):
+        if list_jin_frekuensi[i] != ['',0]: 
+            list_jin_frekuensi_baru[j] = list_jin_frekuensi[i]
+            j+=1
+            list_jin_frekuensi_baru_neff = list_jin_frekuensi_baru_neff + 1
 
     j = 0
     count = 0
-    list_jin_frekuensi_neff = 0
-    while list_jin_frekuensi_neff <= tempat_variable.neff_data_user - 3:
-        for i in range(tempat_variable.neff_data_candi):
-            if list_jin_frekuensi[j][0] == tempat_variable.data_candi[i][1]:
+    while j <= (list_jin_frekuensi_baru_neff-1):
+        for i in range(1,tempat_variable.neff_data_candi):
+            if list_jin_frekuensi_baru[j][0] == tempat_variable.data_candi[i][1]:
                 count += 1
-        list_jin_frekuensi[j] = [list_jin_frekuensi[j][0], count]
+        list_jin_frekuensi_baru[j] = [list_jin_frekuensi_baru[j][0], count]
         count = 0
         j += 1
-        list_jin_frekuensi_neff += 1
 
     frekuensi_terajin = 0
-    for i in range(list_jin_frekuensi_neff):
-        if list_jin_frekuensi[i][1] > frekuensi_terajin:
-            frekuensi_terajin = list_jin_frekuensi[i][1]
+    for i in range(list_jin_frekuensi_baru_neff):
+        if list_jin_frekuensi_baru[i][1] > frekuensi_terajin:
+            frekuensi_terajin = list_jin_frekuensi_baru[i][1]
 
     frekuensi_termalas = 1000
-    for i in range(list_jin_frekuensi_neff):
-        if list_jin_frekuensi[i][1] < frekuensi_termalas:
-            frekuensi_termalas = list_jin_frekuensi[i][1]
+    for i in range(list_jin_frekuensi_baru_neff):
+        if list_jin_frekuensi_baru[i][1] < frekuensi_termalas:
+            frekuensi_termalas = list_jin_frekuensi_baru[i][1]
 
     list_jin_rajin_neff = 0
     list_jin_malas_neff = 0
-    for i in range(list_jin_frekuensi_neff):
-        if list_jin_frekuensi[i][1] == frekuensi_terajin:
+    for i in range(list_jin_frekuensi_baru_neff):
+        if list_jin_frekuensi_baru[i][1] == frekuensi_terajin:
             list_jin_rajin_neff += 1
-        if list_jin_frekuensi[i][1] == frekuensi_termalas:
+        if list_jin_frekuensi_baru[i][1] == frekuensi_termalas:
             list_jin_malas_neff += 1
 
     list_jin_rajin = ["" for i in range(list_jin_rajin_neff)]
@@ -43,31 +58,27 @@ def jin_malas_rajin():
 
     j = 0
     k = 0
-    for i in range(list_jin_frekuensi_neff):
-        if list_jin_frekuensi[i][1] == frekuensi_terajin:
-            list_jin_rajin[j] = list_jin_frekuensi[i][0]
+    for i in range(list_jin_frekuensi_baru_neff):
+        if list_jin_frekuensi_baru[i][1] == frekuensi_terajin:
+            list_jin_rajin[j] = list_jin_frekuensi_baru[i][0]
             j += 1
-        if list_jin_frekuensi[i][1] == frekuensi_termalas:
-            list_jin_malas[k] = list_jin_frekuensi[i][0]
+        if list_jin_frekuensi_baru[i][1] == frekuensi_termalas:
+            list_jin_malas[k] = list_jin_frekuensi_baru[i][0]
             k += 1
 
     if list_jin_rajin_neff > 1:
         save = list_jin_rajin[0]
         for i in range(1, list_jin_rajin_neff):
-            if list_jin_rajin[i] < save:
-                save = list_jin_rajin[i]
-                print("Jin Terajin:", save)
-            else: 
-                print("Jin Terajin:", list_jin_rajin[0])
+            if list_jin_rajin[i] > save:
+                save = list_jin_rajin[i]      
+        print("> Jin Terajin:", save)
 
     if list_jin_malas_neff > 1:
         save = list_jin_malas[0]
         for i in range(1, list_jin_malas_neff):
             if list_jin_malas[i] > save:
                 save = list_jin_malas[i]
-                print("Jin Termalas:", save)
-            else: 
-                print("Jin Termalas:", list_jin_malas[0])
+        print("> Jin Termalas:", save)
 
 def laporanjin():
     jin_pembangun = 0
@@ -85,7 +96,7 @@ def laporanjin():
 
     print (f"> Total Jin: {totaljin}")
     print (f"> Total Jin Pengumpul: {jin_pengumpul}")
-    print (f"> Total Jin Pengumpul: {jin_pembangun}")
+    print (f"> Total Jin Pembangun: {jin_pembangun}")
     if jin_pembangun == 0:
         print(f"> Jin Terajin: -")
         print(f"> Jin Termalas: -")

@@ -62,7 +62,7 @@ def batchbangun():
         tempat_variable.data_bahanbangunan[3][2]=str(int(tempat_variable.data_bahanbangunan[3][2]) - air_total)
         
         #keluaran
-        print("Mengerahkan",c_jin_pembangun," jin untuk membangun candi dengan total bahan",pasir_total,"pasir,",batu_total,"batu, dan",air_total,"air.")
+        print("Mengerahkan",c_jin_pembangun,"jin untuk membangun candi dengan total bahan",pasir_total,"pasir,",batu_total,"batu, dan",air_total,"air.")
         print("Jin berhasil membangun total",neff_listbangun,"candi.")
 
         #KELUARAN JIKA JUMLAH JIN DAN JUMLAH CANDI DIBANGUN TIDAK SAMA KARENA MELEBIHI 100
