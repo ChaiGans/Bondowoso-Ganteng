@@ -1,8 +1,8 @@
-from tempat_variable import role_user
+import tempat_variable
 
 #gaboleh bikin dengan nama help itu udh ada ntar malah redefining
 def helpp(): 
-        if (role_user == "bandung_bondowoso"): 
+        if (tempat_variable.role_user == "bandung_bondowoso"): 
             print("=========== HELP =========")
             print("1. logout \n   untuk keluar dari akun yang digunakan sekarang")
             print("2. summonjin \n   untuk memanggil jin")
@@ -14,19 +14,19 @@ def helpp():
             print("8. laporancandi \n   untuk mengetahui progress pembangunan candi")
             print("9. save \n untuk menyimpan data yang berada di program")
             print("10. exit \n untuk keluar dari program dan kembali ke terminal")
-        if(role_user == "roro_jonggrang"): 
+        if(tempat_variable.role_user == "roro_jonggrang"): 
             print("=========== HELP =========")
             print("1. logout \n   untuk keluar dari akun yang digunakan sekarang")
             print("2. hancurkancandi \n   untuk menghancurkan candi yang tersedia")
             print("3. ayamberkokok \n   untuk mengetahui banyak candi yang berhasil dibangun oleh bandungbondowoso")
             print("4. save \n untuk menyimpan data yang berada di program")
             print("5. exit \n untuk keluar dari program dan kembali ke terminal")
-        if (role_user == "jin_pengumpul"): 
+        if (tempat_variable.role_user == "jin_pengumpul"): 
             print("1. logout \n   untuk keluar dari akun yang digunakan sekarang")
             print("2. kumpul \n   untuk mengumpulkan bahan-bahan yang diperluan untuk membuat candi")
             print("3. save \n untuk menyimpan data yang berada di program")
             print("4. exit \n untuk keluar dari program dan kembali ke terminal")
-        if (role_user == "jin_pembangun"): 
+        if (tempat_variable.role_user == "jin_pembangun"): 
             print("1. logout \n   untuk keluar dari akun yang digunakan sekarang")
             print("2. bangun \n   untuk membangun candi")
             print("3. save \n untuk menyimpan data yang berada di program")
