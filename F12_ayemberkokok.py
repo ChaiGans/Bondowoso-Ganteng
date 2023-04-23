@@ -9,7 +9,9 @@ def ayamberkokok():
         print("")
         print("*Bandung Bondowoso angry noise*")
         print("Roro Jonggrang dikutuk menjadi candi.")
+
     else: 
         print("Jumlah Candi:", tempat_variable.neff_data_candi-1)
         print("Yah, Bandung Bondowoso Memenangkan Permainan!")
     
+    exit()

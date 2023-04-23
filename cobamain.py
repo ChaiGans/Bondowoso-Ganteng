@@ -78,7 +78,7 @@ while(True):
         elif(tempat_variable.role_user!="bandung_bondowoso"):
             print("Anda tidak mempunyai akses untuk fungsi ini")
             helpp()
-    elif(inp=="ubah"):
+    elif(inp=="ubahjin"):
         if(tempat_variable.role_user!="-1" and tempat_variable.role_user=="bandung_bondowoso"):
             ubahjin()
         elif(not tempat_variable.role_user!="-1"):
