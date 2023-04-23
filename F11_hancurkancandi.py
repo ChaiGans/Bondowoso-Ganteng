@@ -15,7 +15,7 @@ def hancurkancandi():
             if (konfirmasi == "Y" or konfirmasi == "N"):
                 if (konfirmasi == "Y"): 
                     hancur(i)
-                    tempat_variable.neff_data_candi-=1
+                    tempat_variable.neff_data_candi -= 1
                 else: 
                     print("Candi tidak jadi dihancurkan")
                     break
