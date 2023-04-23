@@ -62,7 +62,5 @@ def summonjin():
             print("Jin",user_name,"berhasil dipanggil!")
 
             builtin.appendrow_user(user_name, password_input, "jin_pembangun")
-    
-    builtin.cek_current_list()
 
 

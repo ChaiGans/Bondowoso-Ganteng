@@ -69,30 +69,30 @@ def jin_malas_rajin():
             else: 
                 print("Jin Termalas:", list_jin_malas[0])
 
+def laporanjin():
+    jin_pembangun = 0
+    jin_pengumpul = 0
+    for i in range(1, tempat_variable.neff_data_user):
+        if tempat_variable.data_user[i][2] == "jin_pembangun":
+            jin_pembangun += 1
+        elif tempat_variable.data_user[i][2] == "jin_pengumpul":
+            jin_pengumpul += 1
+    totaljin = jin_pembangun + jin_pengumpul
 
-jin_pembangun = 0
-jin_pengumpul = 0
-for i in range(1, tempat_variable.neff_data_user):
-    if tempat_variable.data_user[i][2] == "jin_pembangun":
-        jin_pembangun += 1
-    elif tempat_variable.data_user[i][2] == "jin_pengumpul":
-        jin_pengumpul += 1
-totaljin = jin_pembangun + jin_pengumpul
+    pasir = tempat_variable.data_bahanbangunan [1][2]
+    batu = tempat_variable.data_bahanbangunan [2][2]
+    air = tempat_variable.data_bahanbangunan [3][2]
 
-pasir = tempat_variable.data_bahanbangunan [1][2]
-batu = tempat_variable.data_bahanbangunan [2][2]
-air = tempat_variable.data_bahanbangunan [3][2]
-
-print (f"> Total Jin: {totaljin}")
-print (f"> Total Jin Pengumpul: {jin_pengumpul}")
-print (f"> Total Jin Pengumpul: {jin_pembangun}")
-if jin_pembangun == 0:
-    print(f"> Jin Terajin: -")
-    print(f"> Jin Termalas: -")
-else:
-    jin_malas_rajin()
-print(f"> Jumlah Pasir: {pasir} unit")
-print(f"> Jumlah Air: {air} unit")
-print(f"> Jumlah Batu: {batu} unit")
+    print (f"> Total Jin: {totaljin}")
+    print (f"> Total Jin Pengumpul: {jin_pengumpul}")
+    print (f"> Total Jin Pengumpul: {jin_pembangun}")
+    if jin_pembangun == 0:
+        print(f"> Jin Terajin: -")
+        print(f"> Jin Termalas: -")
+    else:
+        jin_malas_rajin()
+    print(f"> Jumlah Pasir: {pasir} unit")
+    print(f"> Jumlah Air: {air} unit")
+    print(f"> Jumlah Batu: {batu} unit")
 
 

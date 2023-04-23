@@ -1,6 +1,7 @@
-from builtin import username_checker, remove_row, csvreader
+from builtin import username_checker
 import tempat_variable
-from F11-hancurkancandi import hancur
+from F11_hancurkancandi import hancur
+
 def hapusjin():
     print("Masukkan username jin: ", end="")
     user_name = str(input())
@@ -8,23 +9,20 @@ def hapusjin():
         print("Apakah anda yakin ingin menghapus jin dengan username",user_name,"(Y/N)? ",end="")
         choice = str(input())
         if choice == "Y":
-            print("Jin telah berhasil dihapus dari alam gaib.")
+            listbaru = [["0" for i in range(3)] for j in range(113)]
             count = 0
-            for i in range(tempat_variable.neff_data_user):
-                if tempat_variable.data_user[i][0] != user_name:
-                    count += 1
-            listbaru = [0 for i in range(count)]
-            count = 0
-            for i in range(tempat_variable.neff_data_user):
+            listbaru[0]=tempat_variable.data_user[0]
+            for i in range(1,tempat_variable.neff_data_user):
                 if tempat_variable.data_user[i][0] != user_name:
                     listbaru[count] = tempat_variable.data_user[i]
                     count += 1
-            for i in range (tempat_variable.neff_data_user-1):
+            tempat_variable.neff_data_user-=1
+            for i in range (1,tempat_variable.neff_data_user):
                 tempat_variable.data_user[i] = listbaru [i]
-            tempat_variable.data_user[tempat_variable.neff_data_user-1] = ["0" for i in range(3)]
-            for i in range (tempat_variable.neff_data_candi):
-                if not username_checker (user_name, tempat_variable.data_candi):
-                    hancur(i+1)
+            for i in range (1,tempat_variable.neff_data_candi):
+                if (tempat_variable.data_candi[i][1]==user_name):
+                    hancur(i)
+            print("Jin telah berhasil dihapus dari alam gaib.")
         elif choice == "N":
             print("Jin tidak jadi dihapus dari alam gaib.")
     else:
