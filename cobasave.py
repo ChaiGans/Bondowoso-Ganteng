@@ -29,9 +29,9 @@ def save():
     fw=open(lokasi_save+"\\candi.csv","w")
     titip=""
     for i in range(tempat_variable.neff_data_candi):
-        for j in range(3):
+        for j in range(5):
             titip+=str(tempat_variable.data_candi[i][j])
-            if(j!=2):
+            if(j!=4):
                 titip+=";"
             else: titip+="\n"
     fw.write(titip)

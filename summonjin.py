@@ -10,12 +10,12 @@ def summonjin():
         print("(2) Pembangun - Bertugas membangun candi")
         print()
         print("Masukkan nomor jenis jin yang ingin dipanggil: ", end="")
-        jenis_jin = int(input())
-        while (jenis_jin != 1 and jenis_jin != 2):
+        jenis_jin = input()
+        while (jenis_jin != "1" and jenis_jin != "2"):
             print('Tidak ada jenis jin bernomor "'+str(jenis_jin)+'"!')
             print("Masukkan nomor jenis jin yang ingin dipanggil: ", end="")
             jenis_jin = int(input())
-        if jenis_jin == 1:
+        if jenis_jin == "1":
             print('Memilih jin "Pengumpul"')
             print("Masukkan username jin: ", end="")
             user_name = str(input())
@@ -39,7 +39,7 @@ def summonjin():
 
             builtin.appendrow_user(user_name, password_input, "jin_pengumpul")
 
-        elif jenis_jin == 2:
+        elif jenis_jin == "2":
             print('Memilih jin "Pembangun"')
             print("Masukkan username jin: ", end="")
             user_name = str(input())

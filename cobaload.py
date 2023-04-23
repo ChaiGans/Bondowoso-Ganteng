@@ -39,7 +39,6 @@ def bukacsv_candi(nama_lokasi):
                 if(isi[k]!='\n'):
                     titip+=str(isi[k])
             k+=1
-        
         tempat_variable.data_candi[i][j]=titip
         i+=1
         isi=f.readline()+"*"
