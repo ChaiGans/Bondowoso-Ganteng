@@ -68,7 +68,7 @@ while(True):
             print("Anda belum login, silahkan login terlebih dahulu sebelum melakukan Summon Jin")
         elif(tempat_variable.role_user!="bandung_bondowoso"):
             print("Anda tidak mempunyai akses untuk fungsi ini")
-            help()
+            helpp()
     elif(inp=="hapusjin"):
         if(tempat_variable.role_user!="-1" and tempat_variable.role_user=="bandung_bondowoso"):
             hapusjin()
@@ -77,7 +77,7 @@ while(True):
             print("Anda belum login, silahkan login terlebih dahulu sebelum melakukan Hilangkan Jin")
         elif(tempat_variable.role_user!="bandung_bondowoso"):
             print("Anda tidak mempunyai akses untuk fungsi ini")
-            help()
+            helpp()
     elif(inp=="ubah"):
         if(tempat_variable.role_user!="-1" and tempat_variable.role_user=="bandung_bondowoso"):
             ubahjin()
@@ -86,7 +86,7 @@ while(True):
             print("Anda belum login, silahkan login terlebih dahulu sebelum melakukan Ubah Tipe Jin")
         elif(tempat_variable.role_user!="bandung_bondowoso"):
             print("Anda tidak mempunyai akses untuk fungsi ini")
-            help()
+            helpp()
     elif(inp=="bangun"):
         if(tempat_variable.role_user!="-1" and tempat_variable.role_user=="jin_pembangun"):
             bangun()
@@ -95,7 +95,7 @@ while(True):
             print("Anda belum login, silahkan login terlebih dahulu sebelum memanggil fungsi Jin Pembangun")
         elif(tempat_variable.role_user!="jin_pembangun"):
             print("Anda tidak mempunyai akses untuk fungsi ini")
-            help()
+            helpp()
     elif(inp=="kumpul"):
         if(tempat_variable.role_user!="-1" and tempat_variable.role_user=="jin_pengumpul"):
             kumpul()
@@ -104,7 +104,7 @@ while(True):
             print("Anda belum login, silahkan login terlebih dahulu sebelum memanggil fungsi Jin Pengumpul")
         elif(tempat_variable.role_user!="jin_pengumpul"):
             print("Anda tidak mempunyai akses untuk fungsi ini")
-            help()
+            helpp()
     elif(inp=="batchkumpul"):
         if(tempat_variable.role_user!="-1" and tempat_variable.role_user=="bandung_bondowoso"):
             batchkumpul()
@@ -113,7 +113,7 @@ while(True):
             print("Anda belum login, silahkan login terlebih dahulu sebelum melakukan Batch Kumpul")
         elif(tempat_variable.role_user!="bandung_bondowoso"):
             print("Anda tidak mempunyai akses untuk fungsi ini")
-            help()
+            helpp()
     elif(inp=="batchbangun"):
         if(tempat_variable.role_user!="-1" and tempat_variable.role_user=="bandung_bondowoso"):
             batchbangun()
@@ -122,7 +122,7 @@ while(True):
             print("Anda belum login, silahkan login terlebih dahulu sebelum melakukan Batch Bangun")
         elif(tempat_variable.role_user!="bandung_bondowoso"):
             print("Anda tidak mempunyai akses untuk fungsi ini")
-            help()
+            helpp()
     elif(inp=="laporanjin"):
         if(tempat_variable.role_user!="-1" and tempat_variable.role_user=="bandung_bondowoso"):
             laporanjin()
@@ -131,7 +131,7 @@ while(True):
             print("Anda belum login, silahkan login terlebih dahulu sebelum melakukan Ambil Laporan Jin")
         elif(tempat_variable.role_user!="bandung_bondowoso"):
             print("Anda tidak mempunyai akses untuk fungsi ini")
-            help()
+            helpp()
     elif(inp=="laporancandi"):
         if(tempat_variable.role_user!="-1" and tempat_variable.role_user=="bandung_bondowoso"):
             laporancandi()
@@ -140,7 +140,7 @@ while(True):
             print("Anda belum login, silahkan login terlebih dahulu sebelum melakukan Ambil Laporan Candi")
         elif(tempat_variable.role_user!="bandung_bondowoso"):
             print("Anda tidak mempunyai akses untuk fungsi ini")
-            help()
+            helpp()
     elif(inp=="hancurkancandi"):
         if(tempat_variable.role_user!="-1" and tempat_variable.role_user=="roro_jonggrang"):
             hancurkancandi()
@@ -149,16 +149,16 @@ while(True):
             print("Anda belum login, silahkan login terlebih dahulu sebelum melakukan Hancurkan Candi")
         elif(tempat_variable.role_user!="roro_jonggrang"):
             print("Anda tidak mempunyai akses untuk fungsi ini")
-            help()
+            helpp()
     elif(inp=="ayamberkokok"):
-        if(tempat_variable.role_user!="-1" and tempat_variable.role_user=="bandung_bondowoso"):
+        if(tempat_variable.role_user!="-1" and tempat_variable.role_user=="roro_jonggrang"):
             ayamberkokok()
         elif(not tempat_variable.role_user!="-1"):
             print("Ayam Berkokok gagal!")
             print("Anda belum login, silahkan login terlebih dahulu sebelum melakukan Ayam Berkokok")
         elif(tempat_variable.role_user!="roro_jonggrang"):
             print("Anda tidak mempunyai akses untuk fungsi ini")
-            help()
+            helpp()
     elif(inp=="save"): save()
     elif(inp=="exit"):
         keluar()
