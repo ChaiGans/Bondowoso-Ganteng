@@ -49,10 +49,10 @@ inp=input(">>> ")
 while(True):
     if(inp=="login"):
         if(not tempat_variable.role_user!="-1"):
-            login()
+            current_username = login()
         else:
             print("Login gagal!")
-            print("Anda telah login dengan username Bandung, silahkan lakukan “logout” sebelum melakukan login kembali.")
+            print("Anda telah login dengan username", current_username , "silahkan lakukan “logout” sebelum melakukan login kembali.")
     elif(inp=="logout"):
         if(not tempat_variable.role_user!="-1"):
             print("Logout gagal!")

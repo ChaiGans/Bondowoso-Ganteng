@@ -5,6 +5,8 @@ def login():
     username = str(input())
     print("Password: ", end="")
     password = str(input())
+    
+    system = False
 
     if not builtin.username_checker(username,tempat_variable.data_user):
         for i in range(1,tempat_variable.neff_data_user):
@@ -15,7 +17,10 @@ def login():
             tempat_variable.role_user= tempat_variable.data_user[count][2]
             print("Selamat datang,", str(username)+"!")
             print('Masukkan command "help" untuk daftar command yang dapat kamu panggil.')
+            system = True
         else:
             print("Password Salah!")
     else:
         print("Username tidak terdaftar!")
+    
+    if system : return username
