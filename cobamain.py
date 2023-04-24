@@ -46,6 +46,7 @@ print("Silahkan masukkan username Anda")
 
 tempat_variable.role_user = "-1"
 inp=input(">>> ")
+count = 0
 while(True):
     if(inp=="login"):
         if(not tempat_variable.role_user!="-1"):
@@ -165,5 +166,9 @@ while(True):
         exit()
     elif(inp=="help"): helpp()
     else:
-        helpp()
+        count+=1
+        if count == 1:
+            helpp()
+        else:
+            print('Command',inp,'tidak tersedia.','Masukkan command "help" untuk daftar command yang dapat kamu panggil.')
     inp=input(">>> ")

@@ -66,14 +66,14 @@ def jin_malas_rajin():
             list_jin_malas[k] = list_jin_frekuensi_baru[i][0]
             k += 1
 
-    if list_jin_rajin_neff > 1:
+    if list_jin_rajin_neff > 0:
         save = list_jin_rajin[0]
         for i in range(1, list_jin_rajin_neff):
             if list_jin_rajin[i] > save:
                 save = list_jin_rajin[i]      
         print("> Jin Terajin:", save)
 
-    if list_jin_malas_neff > 1:
+    if list_jin_malas_neff > 0:
         save = list_jin_malas[0]
         for i in range(1, list_jin_malas_neff):
             if list_jin_malas[i] > save:
