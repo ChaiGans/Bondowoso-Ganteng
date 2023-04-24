@@ -34,7 +34,7 @@ if os.path.isdir(args.nama_folder)==False:
     print('Folder "'+str(args.nama_folder)+'" tidak ditemukan.')
     exit()
 
-print("loading...")
+print("Loading...")
 time.sleep(1)
 tempat_variable.lokasi_file=str(args.nama_folder)
 load()
