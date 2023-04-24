@@ -1,5 +1,7 @@
+#role dan username
 role_user=""
 nama_user=""
+# lokasi file
 lokasi_file=""
 
 #neff menyatakan banyak array yg sudah terisi +1(array index 0 berisi keterangan)

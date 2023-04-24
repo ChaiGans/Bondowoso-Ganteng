@@ -29,9 +29,15 @@ if args.nama_folder=="":
     print("Usage: python main.py <nama_folder>")
     exit()
 
+folderload=args.nama_folder
 args.nama_folder="save\\"+args.nama_folder
+
+if os.path.isdir("save")==False:
+    print('Folder parent "save" tidak ditemukan.')
+    exit()
+
 if os.path.isdir(args.nama_folder)==False:
-    print('Folder "'+str(args.nama_folder)+'" tidak ditemukan.')
+    print('Folder "'+folderload+'" tidak ditemukan.')
     exit()
 
 print("loading...")
