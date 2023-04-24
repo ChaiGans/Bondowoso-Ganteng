@@ -39,8 +39,7 @@ def batchbangun():
                 #cek jika jumlah candi sudah 100 stop
                 if(tempat_variable.neff_data_candi+neff_listbangun == 101): sudah_100=True
                 #101 karena ada indeks judul di data candi pusat
-    print(tempat_variable.data_candi)
-    print(listbangun)
+  
     #cek apa bisa dibangun dan beri keluaran
     if(c_jin_pembangun==0):
         print("Bangun gagal. Anda tidak punya jin pembangun. Silahkan summon terlebih dahulu.")
@@ -49,12 +48,10 @@ def batchbangun():
     elif (int(tempat_variable.data_bahanbangunan[1][2]) >= pasir_total and int(tempat_variable.data_bahanbangunan[2][2]) >= batu_total and int(tempat_variable.data_bahanbangunan[3][2]) >= air_total):
         #update data candi
         for i in range(neff_listbangun):
-            print (i,listbangun[i])
             idx_isi=tempat_variable.neff_data_candi
             listbangun[i][0]=str(builtin.carikosong())
             tempat_variable.data_candi[idx_isi] = listbangun[i]
             tempat_variable.neff_data_candi+=1
-            print(tempat_variable.data_candi)
 
 
         #update sisa bahan

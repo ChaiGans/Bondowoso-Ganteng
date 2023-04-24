@@ -6,11 +6,10 @@ def jin_malas_rajin():
     j = 0
     list_jin_frekuensi_neff = 0
     for i in range(3, tempat_variable.neff_data_user):
-        if tempat_variable.data_user[i][2] == "jin_pembangun":
-            list_jin_frekuensi[j][0] = tempat_variable.data_user[i][0]
-            j += 1
-            list_jin_frekuensi_neff += 1
-    # count how manu ['', 0]
+        list_jin_frekuensi[j][0] = tempat_variable.data_user[i][0]
+        j += 1
+        list_jin_frekuensi_neff += 1
+    # count how many ['', 0]
     count = 0
     for i in range(list_jin_frekuensi_neff):
         if list_jin_frekuensi[i] == ['',0]:
@@ -66,14 +65,14 @@ def jin_malas_rajin():
             list_jin_malas[k] = list_jin_frekuensi_baru[i][0]
             k += 1
 
-    if list_jin_rajin_neff > 1:
+    if list_jin_rajin_neff > 0:
         save = list_jin_rajin[0]
         for i in range(1, list_jin_rajin_neff):
             if list_jin_rajin[i] > save:
                 save = list_jin_rajin[i]      
         print("> Jin Terajin:", save)
 
-    if list_jin_malas_neff > 1:
+    if list_jin_malas_neff > 0:
         save = list_jin_malas[0]
         for i in range(1, list_jin_malas_neff):
             if list_jin_malas[i] > save:
@@ -97,7 +96,7 @@ def laporanjin():
     print (f"> Total Jin: {totaljin}")
     print (f"> Total Jin Pengumpul: {jin_pengumpul}")
     print (f"> Total Jin Pembangun: {jin_pembangun}")
-    if jin_pembangun == 0:
+    if jin_pembangun == 0 and jin_pengumpul == 0:
         print(f"> Jin Terajin: -")
         print(f"> Jin Termalas: -")
     else:

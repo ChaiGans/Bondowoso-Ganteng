@@ -12,6 +12,9 @@ def save():
         print("Membuat folder save/"+str(lokasi_save)+"...")
         time.sleep(1)
         os.makedirs("save\\"+lokasi_save)
+    else:
+        print("Folder sudah pernah ada, akan segera me-replace folder...")
+        time.sleep(1)
     lokasi_save=os.path.join("save",lokasi_save)
 
     #tulis
@@ -47,3 +50,4 @@ def save():
             else: titip+="\n"
     fw.write(titip)
     fw.close()
+    print("Saving berhasil...")

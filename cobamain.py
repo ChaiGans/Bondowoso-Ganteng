@@ -40,7 +40,7 @@ if os.path.isdir(args.nama_folder)==False:
     print('Folder "'+folderload+'" tidak ditemukan.')
     exit()
 
-print("loading...")
+print("Loading...")
 time.sleep(1)
 tempat_variable.lokasi_file=str(args.nama_folder)
 load()
@@ -52,6 +52,7 @@ print("Silahkan masukkan username Anda")
 
 tempat_variable.role_user = "-1"
 inp=input(">>> ")
+count = 0
 while(True):
     if(inp=="login"):
         if(not tempat_variable.role_user!="-1"):
@@ -65,7 +66,6 @@ while(True):
             print("Anda belum login, silahkan login terlebih dahulu sebelum melakukan logout")
         else:
             logout()
-
     elif(inp=="summonjin"):
         if(tempat_variable.role_user!="-1" and tempat_variable.role_user=="bandung_bondowoso"):
             summonjin()
@@ -73,8 +73,7 @@ while(True):
             print("Summon Jin gagal!")
             print("Anda belum login, silahkan login terlebih dahulu sebelum melakukan Summon Jin")
         elif(tempat_variable.role_user!="bandung_bondowoso"):
-            print("Anda tidak mempunyai akses untuk fungsi ini")
-            helpp()
+            print('Summon jin hanya dapat diakses oleh Bandung Bondowoso. Masukkan command "help" untuk daftar command yang dapat kamu panggil.')
     elif(inp=="hapusjin"):
         if(tempat_variable.role_user!="-1" and tempat_variable.role_user=="bandung_bondowoso"):
             hapusjin()
@@ -82,17 +81,15 @@ while(True):
             print("Hilangkan Jin gagal!")
             print("Anda belum login, silahkan login terlebih dahulu sebelum melakukan Hilangkan Jin")
         elif(tempat_variable.role_user!="bandung_bondowoso"):
-            print("Anda tidak mempunyai akses untuk fungsi ini")
-            helpp()
-    elif(inp=="ubah"):
+            print('Hapus jin hanya dapat diakses oleh Bandung Bondowoso. Masukkan command "help" untuk daftar command yang dapat kamu panggil.')
+    elif(inp=="ubahjin"):
         if(tempat_variable.role_user!="-1" and tempat_variable.role_user=="bandung_bondowoso"):
             ubahjin()
         elif(not tempat_variable.role_user!="-1"):
             print("Ubah Tipe Jin gagal!")
             print("Anda belum login, silahkan login terlebih dahulu sebelum melakukan Ubah Tipe Jin")
         elif(tempat_variable.role_user!="bandung_bondowoso"):
-            print("Anda tidak mempunyai akses untuk fungsi ini")
-            helpp()
+            print('Ubah jin hanya dapat diakses oleh Bandung Bondowoso. Masukkan command "help" untuk daftar command yang dapat kamu panggil.')
     elif(inp=="bangun"):
         if(tempat_variable.role_user!="-1" and tempat_variable.role_user=="jin_pembangun"):
             bangun()
@@ -100,8 +97,7 @@ while(True):
             print("Jin Pembangun gagal!")
             print("Anda belum login, silahkan login terlebih dahulu sebelum memanggil fungsi Jin Pembangun")
         elif(tempat_variable.role_user!="jin_pembangun"):
-            print("Anda tidak mempunyai akses untuk fungsi ini")
-            helpp()
+            print('Bangun hanya dapat diakses oleh Jin Pembangun. Masukkan command "help" untuk daftar command yang dapat kamu panggil.')
     elif(inp=="kumpul"):
         if(tempat_variable.role_user!="-1" and tempat_variable.role_user=="jin_pengumpul"):
             kumpul()
@@ -109,8 +105,7 @@ while(True):
             print("Jin Pengumpul gagal!")
             print("Anda belum login, silahkan login terlebih dahulu sebelum memanggil fungsi Jin Pengumpul")
         elif(tempat_variable.role_user!="jin_pengumpul"):
-            print("Anda tidak mempunyai akses untuk fungsi ini")
-            helpp()
+            print('Kumpul hanya dapat diakses oleh Jin Pengumpul. Masukkan command "help" untuk daftar command yang dapat kamu panggil.')
     elif(inp=="batchkumpul"):
         if(tempat_variable.role_user!="-1" and tempat_variable.role_user=="bandung_bondowoso"):
             batchkumpul()
@@ -118,8 +113,7 @@ while(True):
             print("Batch Kumpul gagal!")
             print("Anda belum login, silahkan login terlebih dahulu sebelum melakukan Batch Kumpul")
         elif(tempat_variable.role_user!="bandung_bondowoso"):
-            print("Anda tidak mempunyai akses untuk fungsi ini")
-            helpp()
+            print('Batchkumpul hanya dapat diakses oleh Bandung Bondowoso. Masukkan command "help" untuk daftar command yang dapat kamu panggil.')
     elif(inp=="batchbangun"):
         if(tempat_variable.role_user!="-1" and tempat_variable.role_user=="bandung_bondowoso"):
             batchbangun()
@@ -127,8 +121,7 @@ while(True):
             print("Batch Bangun gagal!")
             print("Anda belum login, silahkan login terlebih dahulu sebelum melakukan Batch Bangun")
         elif(tempat_variable.role_user!="bandung_bondowoso"):
-            print("Anda tidak mempunyai akses untuk fungsi ini")
-            helpp()
+            print('Batchbangun hanya dapat diakses oleh Bandung Bondowoso. Masukkan command "help" untuk daftar command yang dapat kamu panggil.')
     elif(inp=="laporanjin"):
         if(tempat_variable.role_user!="-1" and tempat_variable.role_user=="bandung_bondowoso"):
             laporanjin()
@@ -136,8 +129,7 @@ while(True):
             print("Ambil Laporan Jin gagal!")
             print("Anda belum login, silahkan login terlebih dahulu sebelum melakukan Ambil Laporan Jin")
         elif(tempat_variable.role_user!="bandung_bondowoso"):
-            print("Anda tidak mempunyai akses untuk fungsi ini")
-            helpp()
+            print('Laporan Jin hanya dapat diakses oleh Bandung Bondowoso. Masukkan command "help" untuk daftar command yang dapat kamu panggil.')
     elif(inp=="laporancandi"):
         if(tempat_variable.role_user!="-1" and tempat_variable.role_user=="bandung_bondowoso"):
             laporancandi()
@@ -145,8 +137,7 @@ while(True):
             print("Ambil Laporan Candi gagal!")
             print("Anda belum login, silahkan login terlebih dahulu sebelum melakukan Ambil Laporan Candi")
         elif(tempat_variable.role_user!="bandung_bondowoso"):
-            print("Anda tidak mempunyai akses untuk fungsi ini")
-            helpp()
+            print('Laporan Candi hanya dapat diakses oleh Bandung Bondowoso. Masukkan command "help" untuk daftar command yang dapat kamu panggil.')
     elif(inp=="hancurkancandi"):
         if(tempat_variable.role_user!="-1" and tempat_variable.role_user=="roro_jonggrang"):
             hancurkancandi()
@@ -154,8 +145,7 @@ while(True):
             print("Hancurkan Candi gagal!")
             print("Anda belum login, silahkan login terlebih dahulu sebelum melakukan Hancurkan Candi")
         elif(tempat_variable.role_user!="roro_jonggrang"):
-            print("Anda tidak mempunyai akses untuk fungsi ini")
-            helpp()
+            print('Hancurkan Candi hanya dapat diakses oleh Roro Jonggrang. Masukkan command "help" untuk daftar command yang dapat kamu panggil.')
     elif(inp=="ayamberkokok"):
         if(tempat_variable.role_user!="-1" and tempat_variable.role_user=="roro_jonggrang"):
             ayamberkokok()
@@ -163,13 +153,17 @@ while(True):
             print("Ayam Berkokok gagal!")
             print("Anda belum login, silahkan login terlebih dahulu sebelum melakukan Ayam Berkokok")
         elif(tempat_variable.role_user!="roro_jonggrang"):
-            print("Anda tidak mempunyai akses untuk fungsi ini")
-            helpp()
+            print('Ayam Berkokok hanya dapat diakses oleh Roro Jonggrang. Masukkan command "help" untuk daftar command yang dapat kamu panggil.')
     elif(inp=="save"): save()
     elif(inp=="exit"):
         keluar()
         exit()
     elif(inp=="help"): helpp()
     else:
-        helpp()
+        if count == 0 :
+            helpp()
+        else:
+            print('Command',inp,'tidak tersedia.','Masukkan command "help" untuk daftar command yang dapat kamu panggil.')
+        count+=1
     inp=input(">>> ")
+
