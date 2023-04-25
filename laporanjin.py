@@ -1,4 +1,3 @@
-from builtin import csvreader, length, appending, username_checker
 import tempat_variable
 
 def jin_malas_rajin():
