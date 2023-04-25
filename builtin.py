@@ -8,6 +8,12 @@ def length(list):
         count += 1
     return count
 
+def lengthstring(s1):
+    s1 += "\n"
+    cnt = 0
+    while(s1[cnt]!='\n'):
+        cnt+=1
+    return cnt
 
 def appending (target,listx):
     list_dummy = listx
