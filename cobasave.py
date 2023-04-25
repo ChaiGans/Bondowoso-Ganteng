@@ -8,7 +8,7 @@ def save():
         print("Membuat folder save...")
         time.sleep(1)
         os.makedirs("save")
-    if not (os.path.isdir("save\\"+str(lokasi_save))):
+    elif not (os.path.isdir("save\\"+str(lokasi_save))):
         print("Membuat folder save/"+str(lokasi_save)+"...")
         time.sleep(1)
         os.makedirs("save\\"+lokasi_save)

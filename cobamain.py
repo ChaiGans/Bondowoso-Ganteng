@@ -158,7 +158,12 @@ while(True):
             print("Anda belum login, silahkan login terlebih dahulu sebelum melakukan Ayam Berkokok")
         elif(tempat_variable.role_user!="roro_jonggrang"):
             print('Ayam Berkokok hanya dapat diakses oleh Roro Jonggrang. Masukkan command "help" untuk daftar command yang dapat kamu panggil.')
-    elif(inp=="save"): save()
+    elif(inp=="save"): 
+        if(tempat_variable.role_user!="-1"):
+            save()
+        elif(not tempat_variable.role_user!="-1"):
+            print("Save gagal!")
+            print("Anda belum login, silahkan login terlebih dahulu sebelum melakukan Save")
     elif(inp=="exit"):
         keluar()
         exit()
