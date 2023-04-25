@@ -4,17 +4,16 @@ def save():
     lokasi_save=input("Masukkan nama folder: ")
     print("Saving...")
     time.sleep(1)
+    print()
     if not (os.path.isdir("save")):
         print("Membuat folder save...")
         time.sleep(1)
         os.makedirs("save")
-    elif not (os.path.isdir("save\\"+str(lokasi_save))):
+    if not (os.path.isdir("save\\"+str(lokasi_save))):
         print("Membuat folder save/"+str(lokasi_save)+"...")
         time.sleep(1)
         os.makedirs("save\\"+lokasi_save)
-    else:
-        print("Folder sudah pernah ada, akan segera me-replace folder...")
-        time.sleep(1)
+
     lokasi_save=os.path.join("save",lokasi_save)
 
     #tulis
@@ -50,4 +49,4 @@ def save():
             else: titip+="\n"
     fw.write(titip)
     fw.close()
-    print("Saving berhasil...")
+    print("Berhasil menyimpan data di folder save/"+str(lokasi_save)+" !")
