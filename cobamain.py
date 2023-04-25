@@ -17,8 +17,6 @@ from cobasave import save
 from F15_Help import helpp
 from f16_exit import keluar
 
-#belum dimasukin fungsi
-
 parser = argparse.ArgumentParser()
 parser.add_argument("nama_folder", default ="",nargs="?")
 args = parser.parse_args()

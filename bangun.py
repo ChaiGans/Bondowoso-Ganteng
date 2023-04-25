@@ -23,11 +23,20 @@ def bangun():
 				tempat_variable.data_bahanbangunan[1][2] = str(int(tempat_variable.data_bahanbangunan[1][2]) - pasir_butuh)
 				tempat_variable.data_bahanbangunan[2][2] = str(int(tempat_variable.data_bahanbangunan[2][2])  - batu_butuh)
 				tempat_variable.data_bahanbangunan[3][2] = str(int(tempat_variable.data_bahanbangunan[3][2])  - air_butuh)
+
+				# Menampilkan pesan keberhasilan pembangunan candi
 				print("Candi berhasil dibangun.")
 				print("Sisa candi yang perlu dibangun: ", 101 - tempat_variable.neff_data_candi)
+
 		else: # Kondisi jika candi yang dibangun telah berjumlah 100
 			print("Candi berhasil dibangun.")
 			print("Sisa candi yang perlu dibangun: ", 0)
-	else: # Bahan tidak cukup
+
+			# Data bahan bangunan akan berkurang setiap command bangun di-execute
+			tempat_variable.data_bahanbangunan[1][2] = str(int(tempat_variable.data_bahanbangunan[1][2]) - pasir_butuh)
+			tempat_variable.data_bahanbangunan[2][2] = str(int(tempat_variable.data_bahanbangunan[2][2])  - batu_butuh)
+			tempat_variable.data_bahanbangunan[3][2] = str(int(tempat_variable.data_bahanbangunan[3][2])  - air_butuh)
+			
+	else: # Menampilkan pesan jika bahan tidak mencukupi
 		print("Bahan bangunan tidak mencukupi.")
 		print("Candi tidak bisa dibangun!")

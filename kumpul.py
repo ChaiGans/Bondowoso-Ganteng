@@ -2,7 +2,7 @@ import builtin,tempat_variable
 
 # Fungsi untuk jin_pengumpul mengumpulkan bahan bangunan
 def kumpul():
-    # Generasi angka acak dari range 1 hingga 5 dengan algoritma LCG (Linear Congruential Generator)
+    # Generasi angka acak dari range 0 hingga 5 dengan algoritma LCG (Linear Congruential Generator)
     pasir_kumpul = builtin.lcg()
     batu_kumpul = builtin.lcg()
     air_kumpul = builtin.lcg()
