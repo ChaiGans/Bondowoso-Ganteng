@@ -26,8 +26,8 @@ def summonjin():
 
             print("Masukkan password jin: ", end ="")
             password_input = str(input())
-            #bikin length buat baca panjang string aja ?
-            while builtin.length(password_input) < 5 or builtin.length(password_input) > 25:
+            #bikin lengthstring buat baca panjang string aja ?
+            while builtin.lengthstring(password_input) < 5 or builtin.lengthstring(password_input) > 25:
                 print("Password panjangnya harus 5-25 karakter!")
                 print("Masukkan password jin: ", end ="")
                 password_input = str(input())
@@ -51,7 +51,7 @@ def summonjin():
             print("Masukkan password jin: ", end ="")
             password_input = str(input())
             #bikin pembaca panjang string
-            while builtin.length(password_input) < 5 or builtin.length(password_input) > 25:
+            while builtin.lengthstring(password_input) < 5 or builtin.lengthstring(password_input) > 25:
                 print("Password panjangnya harus 5-25 karakter!")
                 print("Masukkan password jin: ", end ="")
                 password_input = str(input())
