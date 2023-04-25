@@ -1,4 +1,4 @@
-import random,tempat_variable
+import tempat_variable
 import builtin
 
 def batchbangun():
@@ -15,24 +15,24 @@ def batchbangun():
 
     # merencanakan pembangunan sesuai jumlah jin pembangun yang ada
     for i in range(1,tempat_variable.neff_data_user):
-        if(tempat_variable.data_user[i][2]=="jin_pembangun"):
+        if(tempat_variable.data_user[i][2] == "jin_pembangun"):
             c_jin_pembangun+=1
             #jika masih ada candi yang perlu dibangun
             if((not sudah_100) and tempat_variable.neff_data_candi<101):
 
                 #generate bahan yang dibutuhkan
-                pasir_butuh=random.randint(1, 5)
-                batu_butuh=random.randint(1, 5)
-                air_butuh=random.randint(1, 5)
-                pasir_total+=pasir_butuh
-                batu_total+=batu_butuh
-                air_total+=air_butuh
+                pasir_butuh = builtin.lcg()
+                batu_butuh = builtin.lcg()
+                air_butuh = builtin.lcg()
+                pasir_total += pasir_butuh
+                batu_total += batu_butuh
+                air_total += air_butuh
 
                 # isi listbangun
-                listbangun[neff_listbangun][1]=tempat_variable.data_user[i][0]
-                listbangun[neff_listbangun][2]=str(pasir_butuh)
-                listbangun[neff_listbangun][3]=str(batu_butuh)
-                listbangun[neff_listbangun][4]=str(air_butuh)
+                listbangun[neff_listbangun][1] = tempat_variable.data_user[i][0]
+                listbangun[neff_listbangun][2] = str(pasir_butuh)
+                listbangun[neff_listbangun][3] = str(batu_butuh)
+                listbangun[neff_listbangun][4] = str(air_butuh)
                 neff_listbangun+=1
 
 

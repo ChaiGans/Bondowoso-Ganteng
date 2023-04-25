@@ -1,6 +1,7 @@
 #role dan username
 role_user=""
 nama_user=""
+
 # lokasi file
 lokasi_file=""
 
@@ -13,3 +14,6 @@ neff_data_bahanbangunan=0
 data_user=[["0" for i in range(3)] for j in range(113)]
 data_candi=[["0" for i in range(5)] for j in range(113)]
 data_bahanbangunan=[["0"for i in range(3)]for j in range(4)]
+
+#seed lcg
+seed_lcg=0

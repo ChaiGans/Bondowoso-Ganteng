@@ -117,3 +117,8 @@ def carikosong():
     for i in range(1,103):
         if(ada[i] == 0):
             return i
+        
+def lcg():
+    x=(tempat_variable.seed_lcg*721+132)%5+1
+    tempat_variable.seed_lcg=x
+    return x

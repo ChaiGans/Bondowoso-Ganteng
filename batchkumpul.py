@@ -1,4 +1,4 @@
-import random,tempat_variable
+import tempat_variable, builtin
 
 
 def batchkumpul():
@@ -10,10 +10,10 @@ def batchkumpul():
     # mengumpulkan bahan dengan jin pengumpul yang ada
     for i in range(1,tempat_variable.neff_data_user):
         if(tempat_variable.data_user[i][2]=="jin_pengumpul"):
-            c_jin_pengumpul+=1
-            pasir_terkumpul+=random.randint(1, 5)
-            batu_terkumpul+=random.randint(1, 5)
-            air_terkumpul+=random.randint(1, 5)
+            c_jin_pengumpul += 1
+            pasir_terkumpul += builtin.lcg()
+            batu_terkumpul += builtin.lcg()
+            air_terkumpul += builtin.lcg()
 
     # keluaran sesuai jumlah jin pengumpul
     if c_jin_pengumpul>0:

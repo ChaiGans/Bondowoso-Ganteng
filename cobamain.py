@@ -40,8 +40,12 @@ if os.path.isdir(args.nama_folder)==False:
     print('Folder "'+folderload+'" tidak ditemukan.')
     exit()
 
+# pengambilan seed lcg awal dari waktu
+current_time = time.time()
+local_time = time.localtime(current_time)
+tempat_variable.seed_lcg = int(local_time.tm_sec)
+
 print("Loading...")
-time.sleep(1)
 tempat_variable.lokasi_file=str(args.nama_folder)
 load()
 #print(tempat_variable.data_user)
