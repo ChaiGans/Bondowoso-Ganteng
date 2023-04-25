@@ -74,7 +74,7 @@ def jin_malas_rajin():
     if list_jin_malas_neff > 0:
         save = list_jin_malas[0]
         for i in range(1, list_jin_malas_neff):
-            if list_jin_malas[i] > save:
+            if list_jin_malas[i] < save:
                 save = list_jin_malas[i]
         print("> Jin Termalas:", save)
 

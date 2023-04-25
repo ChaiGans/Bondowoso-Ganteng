@@ -1,6 +1,6 @@
 import tempat_variable
 
-#gaboleh bikin dengan nama help itu udh ada ntar malah redefining
+# Penggunaan nama fungsi helpp() bukan help() diakibatkan "help()" sudah merupakan fungsi bawaan dari python
 def helpp(): 
     if (tempat_variable.role_user == "bandung_bondowoso"): 
         print("=======================  HELP  =======================")
