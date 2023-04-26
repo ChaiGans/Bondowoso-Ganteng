@@ -8,7 +8,7 @@ def ubahjin():
 	username = str(input())
 
 	# Kondisi jika "username" ditemukan pada list data_user
-	if not builtin.username_checker (username, tempat_variable.data_user):
+	if not builtin.username_checker (username, tempat_variable.data_user) and (username != "Bondowoso" and username != "Roro"):
 		# i merupakan variabel yang menyimpan posisi "username" pada list data_user
 		i = builtin.find_line (tempat_variable.data_user, username) 
 
