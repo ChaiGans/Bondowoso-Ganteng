@@ -16,4 +16,6 @@ data_candi=[["0" for i in range(5)] for j in range(113)]
 data_bahanbangunan=[["0"for i in range(3)]for j in range(4)]
 
 # Seed LCG
-seed_lcg=0
+seed_lcg_pasir = 2
+seed_lcg_batu = 10
+seed_lcg_air = 6

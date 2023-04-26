@@ -42,7 +42,13 @@ def carikosong():
             return i
         
 # Fungsi yang bertujuan untuk mengenerasi angka acak dengan algoritma LCG (Linear Congruential Generator)
-def lcg(kecil,besar):
-    x=(tempat_variable.seed_lcg*721+132)%(besar-kecil+1)+kecil
-    tempat_variable.seed_lcg=x
-    return x
+def lcg(x, seed_lcg):
+    a = 1103515245 
+    c = 12345
+    m = 2**64
+    if x == "bangun": # Generates 1 to 5
+        seed_lcg = (a * seed_lcg + c) % m
+        return seed_lcg, ((seed_lcg % 5) + 1)
+    elif x == "kumpul": # Generates 0 to 5
+        seed_lcg = (a * seed_lcg + c) % m
+        return seed_lcg, (seed_lcg % 6)

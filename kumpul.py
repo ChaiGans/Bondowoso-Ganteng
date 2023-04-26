@@ -3,9 +3,9 @@ import builtin,tempat_variable
 # Fungsi untuk jin_pengumpul mengumpulkan bahan bangunan
 def kumpul():
     # Generasi angka acak dari range 0 hingga 5 dengan algoritma LCG (Linear Congruential Generator)
-    pasir_kumpul = builtin.lcg(0,5)
-    batu_kumpul = builtin.lcg(0,5)
-    air_kumpul = builtin.lcg(0,5)
+    tempat_variable.seed_lcg_pasir, pasir_kumpul = builtin.lcg("kumpul", tempat_variable.seed_lcg_pasir)
+    tempat_variable.seed_lcg_batu, batu_kumpul = builtin.lcg("kumpul", tempat_variable.seed_lcg_batu)
+    tempat_variable.seed_lcg_air, air_kumpul = builtin.lcg("kumpul", tempat_variable.seed_lcg_air)
 
     # Menampilkan banyaknya pasir, batu, dan air yang dikumpulkan oleh jin_pengumpul
     print("Jin menemukan",pasir_kumpul, "pasir", batu_kumpul, "batu, dan", air_kumpul, "air.")

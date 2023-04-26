@@ -19,9 +19,9 @@ def batchbangun():
             c_jin_pembangun+=1
 
             #generate bahan yang dibutuhkan untuk bangun candi
-            pasir_butuh = builtin.lcg(1,5)
-            batu_butuh = builtin.lcg(1,5)
-            air_butuh = builtin.lcg(1,5)
+            tempat_variable.seed_lcg_pasir, pasir_butuh = builtin.lcg("bangun", tempat_variable.seed_lcg_pasir)
+            tempat_variable.seed_lcg_batu, batu_butuh = builtin.lcg("bangun", tempat_variable.seed_lcg_batu)
+            tempat_variable.seed_lcg_air, air_butuh = builtin.lcg("bangun", tempat_variable.seed_lcg_air)
             pasir_total += pasir_butuh
             batu_total += batu_butuh
             air_total += air_butuh

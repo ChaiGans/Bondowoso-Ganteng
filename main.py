@@ -18,4 +18,3 @@ import builtin
 
 print(builtin.data_user)
 print(builtin.data_candi)
-    

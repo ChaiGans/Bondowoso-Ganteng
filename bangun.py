@@ -2,10 +2,11 @@ import builtin
 import tempat_variable
 
 def bangun():
+
 	# Generasi angka acak dari 1 hingga 5 dengan menerapkan konsep LCG (Linear Congruential Generator)
-	pasir_butuh = builtin.lcg(1,5)
-	batu_butuh = builtin.lcg(1,5)
-	air_butuh = builtin.lcg(1,5)
+	tempat_variable.seed_lcg_pasir, pasir_butuh = builtin.lcg("bangun", tempat_variable.seed_lcg_pasir)
+	tempat_variable.seed_lcg_batu, batu_butuh = builtin.lcg("bangun", tempat_variable.seed_lcg_batu)
+	tempat_variable.seed_lcg_air, air_butuh = builtin.lcg("bangun", tempat_variable.seed_lcg_air)
 
 	# Kondisi jika bahan bangunan mencukupi untuk membangun candi
 	if int(tempat_variable.data_bahanbangunan[1][2]) >= pasir_butuh and int(tempat_variable.data_bahanbangunan[2][2]) >= batu_butuh and int(tempat_variable.data_bahanbangunan[3][2]) >= air_butuh:
@@ -26,11 +27,11 @@ def bangun():
 
 				# Menampilkan pesan keberhasilan pembangunan candi
 				print("Candi berhasil dibangun.")
-				print("Sisa candi yang perlu dibangun: ", 101 - tempat_variable.neff_data_candi)
+				print("Sisa candi yang perlu dibangun:", 101 - tempat_variable.neff_data_candi)
 
 		else: # Kondisi jika candi yang dibangun telah berjumlah 100
 			print("Candi berhasil dibangun.")
-			print("Sisa candi yang perlu dibangun: ", 0)
+			print("Sisa candi yang perlu dibangun:", 0)
 
 			# Data bahan bangunan akan berkurang setiap command bangun di-execute
 			tempat_variable.data_bahanbangunan[1][2] = str(int(tempat_variable.data_bahanbangunan[1][2]) - pasir_butuh)
@@ -40,3 +41,4 @@ def bangun():
 	else: # Menampilkan pesan jika bahan tidak mencukupi
 		print("Bahan bangunan tidak mencukupi.")
 		print("Candi tidak bisa dibangun!")
+
