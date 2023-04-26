@@ -1,7 +1,8 @@
 import tempat_variable
+import typing
 
 # Fungsi hancur bertujuan untuk menghapus candi pada indeks tertentu
-def hancur(idxhancur):
+def hancur(idxhancur : int):
     for i in range(idxhancur,tempat_variable.neff_data_candi):
         tempat_variable.data_candi[i]=tempat_variable.data_candi[i+1]
 

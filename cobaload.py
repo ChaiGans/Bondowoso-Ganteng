@@ -1,6 +1,7 @@
 import tempat_variable
+import typing
 
-def bukacsv_user(nama_lokasi):
+def bukacsv_user(nama_lokasi : str):
     f=open(nama_lokasi,'r')
     isi=str(f.readline())+"*"
     i=0
@@ -23,7 +24,7 @@ def bukacsv_user(nama_lokasi):
         tempat_variable.neff_data_user=i
     f.close()
 
-def bukacsv_candi(nama_lokasi):
+def bukacsv_candi(nama_lokasi : str):
     f=open(nama_lokasi,'r')
     isi=str(f.readline())+"*"
     i=0
@@ -45,7 +46,7 @@ def bukacsv_candi(nama_lokasi):
         tempat_variable.neff_data_candi=i
     f.close()
 
-def bukacsv_bahan(nama_lokasi):
+def bukacsv_bahan(nama_lokasi : str):
     f=open(nama_lokasi,'r')
     isi=str(f.readline())+"*"
     i=0
