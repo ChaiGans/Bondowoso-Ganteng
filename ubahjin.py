@@ -15,45 +15,42 @@ def ubahjin():
 		# Kondisi jika role "username" pada list data_user adalah "jin_pengumpul"
 		if tempat_variable.data_user[i][2] == "jin_pengumpul":
 
-			# Meminta konfirmasi dari user untuk melakukan pengubahan role jin
-			print('Jin ini bertipe "Pengumpul". Yakin ingin mengubah ke tipe "Pembangun" (Y/N)? ', end = "")
-			user_input = str(input())
-
-			system = True # Inisialisasi iterasi
-			while system == True: 
-				if user_input == "Y":
-					tempat_variable.data_user[i][2]= "jin_pembangun"
-					print("Jin telah berhasil diubah")
-					system = False
-				elif user_input == "N":
-					print("Jin tidak jadi diubah.")
-					system = False
-				else: # Iterasi hingga program mendapatkan masukan yang benar
-					print("Pilihan",user_input,"tidak tersedia. Sesuaikan dengan pilihan yang tersedia.")
-					print('Jin ini bertipe "Pengumpul". Yakin ingin mengubah ke tipe "Pembangun" (Y/N)? ', end = "")
-					user_input = str(input())
+			cetakUbahJin ("jin_pengumpul", "jin_pembangun", i)
 
 		# Kondisi jika role "username" pada list data_user adalah "jin_pembangun"
 		elif tempat_variable.data_user[i][2] == "jin_pembangun":
 
-			# Meminta konfirmasi dari user untuk melakukan pengubahan role jin
-			print('Jin ini bertipe "Pembangun". Yakin ingin mengubah ke tipe "Pengumpul" (Y/N)? ', end = "")
-			user_input = str(input())
-
-			system = True # Inisialisasi iterasi
-			while system == True:
-				if user_input == "Y":
-					tempat_variable.data_user[i][2]="jin_pengumpul"
-					print("Jin telah berhasil diubah")
-					system = False
-				elif user_input == "N":
-					print("Jin tidak jadi diubah.")
-					system = False
-				else: # Iterasi hingga program mendapatkan masukan yang benar
-					print("Pilihan",user_input,"tidak tersedia. Sesuaikan dengan pilihan yang tersedia.")
-					print('Jin ini bertipe "Pembangun". Yakin ingin mengubah ke tipe "Pengumpul" (Y/N)? ', end = "")
-					user_input = str(input())
+			cetakUbahJin ("jin_pembangun", "jin_pengumpul", i)
 
 	# Kondisi jika "username" tidak ditemukan pada list data_user
 	else:
 		print("Tidak ada jin dengan username tersebut.")
+
+# Prosedur cetakUbahJin
+def cetakUbahJin (jin_awal : str, jin_akhir : str, i : int):
+	if jin_awal == "jin_pembangun":
+		print('Jin ini bertipe "Pembangun". Yakin ingin mengubah ke tipe "Pengumpul" (Y/N)? ', end = "")
+	elif jin_awal == "jin_pengumpul" :
+		print('Jin ini bertipe "Pengumpul". Yakin ingin mengubah ke tipe "Pembangun" (Y/N)? ', end = "")
+
+	user_input = str(input())
+
+	system = True # Inisialisasi iterasi
+	while system == True:
+		if user_input == "Y":
+			if jin_awal == "jin_pembangun":
+				tempat_variable.data_user[i][2]="jin_pengumpul"
+			elif jin_awal == "jin_pengumpul" :
+				tempat_variable.data_user[i][2]="jin_pembangun"
+			print("Jin telah berhasil diubah.")
+			system = False
+		elif user_input == "N":
+			print("Jin tidak jadi diubah.")
+			system = False
+		else: # Iterasi hingga program mendapatkan masukan yang benar
+			print("Pilihan",user_input,"tidak tersedia. Sesuaikan dengan pilihan yang tersedia.")
+			if jin_awal == "jin_pembangun":
+				print('Jin ini bertipe "Pembangun". Yakin ingin mengubah ke tipe "Pengumpul" (Y/N)? ', end = "")
+			elif jin_awal == "jin_pengumpul" :
+				print('Jin ini bertipe "Pengumpul". Yakin ingin mengubah ke tipe "Pembangun" (Y/N)? ', end = "")
+			user_input = str(input())
