@@ -17,16 +17,17 @@ def batchbangun():
     for i in range(1,tempat_variable.neff_data_user):
         if(tempat_variable.data_user[i][2] == "jin_pembangun"):
             c_jin_pembangun+=1
-            #jika masih ada candi yang perlu dibangun
-            if((not sudah_100) and tempat_variable.neff_data_candi<101):
 
-                #generate bahan yang dibutuhkan
-                pasir_butuh = builtin.lcg()
-                batu_butuh = builtin.lcg()
-                air_butuh = builtin.lcg()
-                pasir_total += pasir_butuh
-                batu_total += batu_butuh
-                air_total += air_butuh
+            #generate bahan yang dibutuhkan untuk bangun candi
+            pasir_butuh = builtin.lcg(1,5)
+            batu_butuh = builtin.lcg(1,5)
+            air_butuh = builtin.lcg(1,5)
+            pasir_total += pasir_butuh
+            batu_total += batu_butuh
+            air_total += air_butuh
+
+            #jika masih ada candi yang perlu dibangun dan disimpan
+            if((not sudah_100) and tempat_variable.neff_data_candi<101):
 
                 # isi listbangun
                 listbangun[neff_listbangun][1] = tempat_variable.data_user[i][0]
@@ -61,10 +62,8 @@ def batchbangun():
         
         #keluaran
         print("Mengerahkan",c_jin_pembangun,"jin untuk membangun candi dengan total bahan",pasir_total,"pasir,",batu_total,"batu, dan",air_total,"air.")
-        print("Jin berhasil membangun total",neff_listbangun,"candi.")
+        print("Jin berhasil membangun total",c_jin_pembangun,"candi.")
 
-        #KELUARAN JIKA JUMLAH JIN DAN JUMLAH CANDI DIBANGUN TIDAK SAMA KARENA MELEBIHI 100
-        #BELUM
 
     #bahan tidak cukup
     else:

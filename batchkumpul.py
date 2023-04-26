@@ -14,9 +14,9 @@ def batchkumpul():
         # Mencari semua jin yang memiliki role jin_pengumpul
         if(tempat_variable.data_user[i][2]=="jin_pengumpul"):
             c_jin_pengumpul += 1
-            pasir_terkumpul += builtin.lcg()
-            batu_terkumpul += builtin.lcg()
-            air_terkumpul += builtin.lcg()
+            pasir_terkumpul += builtin.lcg(0,5)
+            batu_terkumpul += builtin.lcg(0,5)
+            air_terkumpul += builtin.lcg(0,5)
 
     # Kondisi jika ditemukan jin_pengumpul pada list data_user
     # Iterasi untuk meng-update list data bahan bangunan dengan bahan bangunan yang telah dikumpulkan

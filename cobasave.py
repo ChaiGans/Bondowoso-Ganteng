@@ -14,6 +14,7 @@ def save():
         time.sleep(1)
         os.makedirs("save\\"+lokasi_save)
 
+    nama_folder = lokasi_save
     lokasi_save=os.path.join("save",lokasi_save)
 
     #tulis
@@ -49,4 +50,4 @@ def save():
             else: titip+="\n"
     fw.write(titip)
     fw.close()
-    print("Berhasil menyimpan data di folder save/"+str(lokasi_save)+" !")
+    print("Berhasil menyimpan data di folder save/"+str(nama_folder)+" !")
