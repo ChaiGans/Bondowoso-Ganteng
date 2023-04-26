@@ -50,4 +50,5 @@ def save():
             else: titip+="\n"
     fw.write(titip)
     fw.close()
+    print()
     print("Berhasil menyimpan data di folder save/"+str(nama_folder)+" !")
