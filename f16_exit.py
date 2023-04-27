@@ -1,3 +1,5 @@
+from cobasave import save
+
 # Fungsi keluar bertujuan untuk keluar dari program, namun tetap memastikan konfirmasi user untuk melakukan penyimpanan file
 
 def keluar():
