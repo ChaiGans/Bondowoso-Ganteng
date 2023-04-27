@@ -17,7 +17,7 @@ def batchbangun():
     for i in range(1,tempat_variable.neff_data_user):
         if(tempat_variable.data_user[i][2] == "jin_pembangun"):
             c_jin_pembangun+=1
-
+            
             #generate bahan yang dibutuhkan untuk bangun candi
             tempat_variable.seed_lcg_pasir, pasir_butuh = builtin.lcg("bangun", tempat_variable.seed_lcg_pasir)
             tempat_variable.seed_lcg_batu, batu_butuh = builtin.lcg("bangun", tempat_variable.seed_lcg_batu)
