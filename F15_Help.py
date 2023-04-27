@@ -18,7 +18,7 @@ def helpp():
         print("=======================  HELP  =======================")
         print("1. logout \n   untuk keluar dari akun yang digunakan sekarang")
         print("2. hancurkancandi \n   untuk menghancurkan candi yang tersedia")
-        print("3. ayamberkokok \n   untuk mengetahui banyak candi yang berhasil dibangun oleh bandungbondowoso")
+        print("3. ayamberkokok \n   untuk mengakhiri permainan dan menentukan pemenang")
         print("4. save \n   untuk menyimpan data yang berada di program")
         print("5. exit \n   untuk keluar dari program dan kembali ke terminal")
     elif (tempat_variable.role_user == "jin_pengumpul"): 
