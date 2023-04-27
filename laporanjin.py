@@ -106,6 +106,8 @@ def jin_malas_rajin():
 
 # Fungsi laporanjin bertujuan untuk memberikan laporan tentang kinerja daripada jin
 def laporanjin():
+    print()
+    
     # Inisialisasi variabel banyak jin
     jin_pembangun = 0
     jin_pengumpul = 0

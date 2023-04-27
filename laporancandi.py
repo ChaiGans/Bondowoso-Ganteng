@@ -2,7 +2,8 @@ import tempat_variable
 
 # Fungsi laporancandi bertujuan untuk menampilkan informasi-informasi tentang candi yang telah dibangun
 def laporancandi ():
-
+    print()
+    
     # Inisialisasi nilai variabel yang digunakan pada iterasi
     banyak_candi = pasir = batu = air = 0 
     min_price = 200000

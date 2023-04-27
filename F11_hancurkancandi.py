@@ -18,7 +18,7 @@ def hancurkancandi():
                 ditemukan = True # Bernilai True jika ditemukan ID Candi pada list data candi
 
                 # Menampilkan pesan konfirmasi untuk user apakah ingin menghapus candi
-                konfirmasi = input(f"Apakah anda yakin ingin menghancurkan candi ID: {IDCandi} (Y/N)?")
+                konfirmasi = input(f"Apakah anda yakin ingin menghancurkan candi ID: {IDCandi} (Y/N)? ")
 
                 system = True # Inisialisasi iterasi
                 # Proses iterasi hingga mendapatkan pilihan yang sesuai dari user (Y/N)
@@ -34,7 +34,7 @@ def hancurkancandi():
                             system = False
                     else:
                         print("Pilihan", konfirmasi, "tidak tersedia. Silahkan masukkan pilihan yang sesuai.")
-                        konfirmasi = input(f"Apakah anda yakin ingin menghancurkan candi ID: {IDCandi} (Y/N)?")
+                        konfirmasi = input(f"Apakah anda yakin ingin menghancurkan candi ID: {IDCandi} (Y/N)? ")
                 break
 
         # Kondisi jika ID ditemukan pada data candi sehingga program berhenti untuk melakukan iterasi
