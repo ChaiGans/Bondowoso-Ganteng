@@ -7,7 +7,7 @@ def batchbangun():
     batu_total = 0
     air_total = 0
     sudah_100 = False
-    listbangun = [["0" for i in range(5)] for j in range(105)]
+    listbangun = [["0" for i in range(5)] for j in range(113)]
     neff_listbangun = 0
     #berisikan informasi candi jika berhasil dibangun
     #ukuran [i][4]
@@ -17,7 +17,7 @@ def batchbangun():
     for i in range(1,tempat_variable.neff_data_user):
         if(tempat_variable.data_user[i][2] == "jin_pembangun"):
             c_jin_pembangun+=1
-            
+
             #generate bahan yang dibutuhkan untuk bangun candi
             tempat_variable.seed_lcg_pasir, pasir_butuh = builtin.lcg("bangun", tempat_variable.seed_lcg_pasir)
             tempat_variable.seed_lcg_batu, batu_butuh = builtin.lcg("bangun", tempat_variable.seed_lcg_batu)
