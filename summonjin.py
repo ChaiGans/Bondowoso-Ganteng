@@ -21,7 +21,7 @@ def summonjin():
         while (jenis_jin != "1" and jenis_jin != "2"):
             print('Tidak ada jenis jin bernomor "'+str(jenis_jin)+'"!')
             print("Masukkan nomor jenis jin yang ingin dipanggil: ", end="")
-            jenis_jin = int(input())
+            jenis_jin = str(input())
 
         # Kondisi jika pengguna memilih summon jin_pengumpul
         if jenis_jin == "1":
