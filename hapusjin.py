@@ -37,9 +37,9 @@ def hapusjin():
                 # Menghapus candi yang pernah dibuat oleh jin yang dihapus
                 idxhancur=1
                 while(idxhancur < tempat_variable.neff_data_candi):
-                    if (tempat_variable.data_candi[i][1] == user_name):
-                        hancur(i)
-                        idxhancur=1
+                    if (tempat_variable.data_candi[idxhancur][1] == user_name):
+                        hancur(idxhancur)
+                        idxhancur = 1
                         tempat_variable.neff_data_candi -= 1
                     else:
                         idxhancur+=1
