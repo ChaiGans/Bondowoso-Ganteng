@@ -35,11 +35,11 @@ def find_line (data : list, user_name : str) -> int:
 
 # Fungsi yang bertujuan untuk mencari bagian kosong, berguna ketika membangun candi
 def carikosong() -> int:
-    ada=[0 for i in range(103)]
+    listbaru =[0 for i in range(103)]
     for i in range(1,tempat_variable.neff_data_candi):
-        ada[int(tempat_variable.data_candi[i][0])] = 1
+        listbaru[int(tempat_variable.data_candi[i][0])] = 1
     for i in range(1,103):
-        if(ada[i] == 0):
+        if(listbaru[i] == 0):
             return i
         
 # Fungsi yang bertujuan untuk mengenerasi angka acak dengan algoritma LCG (Linear Congruential Generator)
