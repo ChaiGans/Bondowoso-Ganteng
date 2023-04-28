@@ -8,7 +8,7 @@ def tuliscsv(jenis, tujuan, data, neff_data):
         tujuan = tujuan + "\\candi.csv"
         bkanan = 4
     if(jenis == "bahan"):
-        tujuan = tujuan + "\\bahanbangunan.csv"     
+        tujuan = tujuan + "\\bahan_bangunan.csv"     
         bkanan = 2
 
     fw = open(tujuan,"w")
