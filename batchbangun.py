@@ -7,7 +7,7 @@ def batchbangun():
     batu_total = 0
     air_total = 0
     sudah_100 = False
-    listbangun = [["0" for i in range(5)] for j in range(105)]
+    listbangun = [["0" for i in range(5)] for j in range(113)]
     neff_listbangun = 0
     #berisikan informasi candi jika berhasil dibangun
     #ukuran [i][4]
