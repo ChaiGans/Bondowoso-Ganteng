@@ -39,7 +39,6 @@ def hapusjin():
                 while(idxhancur < tempat_variable.neff_data_candi):
                     if (tempat_variable.data_candi[idxhancur][1] == user_name):
                         hancur(idxhancur)
-                        idxhancur = 1
                         tempat_variable.neff_data_candi -= 1
                     else:
                         idxhancur+=1
