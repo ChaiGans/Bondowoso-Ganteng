@@ -43,7 +43,7 @@ def carikosong() -> int:
             return i
         
 # Fungsi yang bertujuan untuk mengenerasi angka acak dengan algoritma LCG (Linear Congruential Generator)
-def lcg(x : int, seed_lcg : int) -> int and int:
+def lcg(x : str, seed_lcg : int) -> int and int:
     a = 1103515245 # Multiplier
     c = 12345 # Increment
     m = 2**64 # Modulus

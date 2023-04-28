@@ -38,6 +38,10 @@ def hancurkancandi():
                 break
 
         # Kondisi jika ID ditemukan pada data candi sehingga program berhenti untuk melakukan iterasi
-        if ditemukan:
+        if tempat_variable.neff_data_candi == 1:
+            print("Tidak ada candi dengan ID tersebut.")
+            break
+            
+        if ditemukan :
             break
         print("Tidak ada candi dengan ID tersebut.")
