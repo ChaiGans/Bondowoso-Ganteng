@@ -1,6 +1,6 @@
 import time,os,tempat_variable
 
-def tuliscsv(jenis, tujuan, data, neff_data):
+def tuliscsv(jenis : str, tujuan : str , data : list, neff_data : int):
     if(jenis == "user"):
         tujuan = tujuan + "\\user.csv"
         bkanan = 2
