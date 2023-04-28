@@ -1,7 +1,7 @@
 import tempat_variable
 import typing
 
-def bukacsv (jenis, nama_lokasi : str):
+def bukacsv (jenis : str, nama_lokasi : str):
     #bkanan mewakili indeks kolom terbesar
     if jenis == "user":
         list_dummy = [["0" for i in range(3)] for j in range(113)]
