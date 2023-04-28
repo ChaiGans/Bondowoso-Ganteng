@@ -1,5 +1,27 @@
 import time,os,tempat_variable
 
+def tuliscsv(jenis, tujuan, data, neff_data):
+    if(jenis == "user"):
+        tujuan = tujuan + "\\user.csv"
+        bkanan = 2
+    if(jenis == "candi"):
+        tujuan = tujuan + "\\candi.csv"
+        bkanan = 4
+    if(jenis == "bahan"):
+        tujuan = tujuan + "\\bahanbangunan.csv"     
+        bkanan = 2
+
+    fw = open(tujuan,"w")
+    titip = ""
+    for i in range(neff_data):
+        for j in range(bkanan+1):
+            titip += str(data[i][j])
+            if(j!=bkanan):
+                titip += ";"
+            else: titip += "\n"
+    fw.write(titip)
+    fw.close()
+
 def save():
     lokasi_save=input("Masukkan nama folder: ")
     print("Saving...")
@@ -11,44 +33,14 @@ def save():
         os.makedirs("save")
     if not (os.path.isdir("save\\"+str(lokasi_save))):
         print("Membuat folder save/"+str(lokasi_save)+"...")
+        print()
         time.sleep(1)
         os.makedirs("save\\"+lokasi_save)
 
     nama_folder = lokasi_save
     lokasi_save=os.path.join("save",lokasi_save)
-
-    #tulis
-    fw=open(lokasi_save+"\\user.csv","w")
-    titip=""
-    for i in range(tempat_variable.neff_data_user):
-        for j in range(3):
-            titip+=str(tempat_variable.data_user[i][j])
-            if(j!=2):
-                titip+=";"
-            else: titip+="\n"
-    fw.write(titip)
-    fw.close()
-
-    fw=open(lokasi_save+"\\candi.csv","w")
-    titip=""
-    for i in range(tempat_variable.neff_data_candi):
-        for j in range(5):
-            titip+=str(tempat_variable.data_candi[i][j])
-            if(j!=4):
-                titip+=";"
-            else: titip+="\n"
-    fw.write(titip)
-    fw.close()
-
-    fw=open(lokasi_save+"\\bahan_bangunan.csv","w")
-    titip=""
-    for i in range(tempat_variable.neff_data_bahanbangunan):
-        for j in range(3):
-            titip+=str(tempat_variable.data_bahanbangunan[i][j])
-            if(j!=2):
-                titip+=";"
-            else: titip+="\n"
-    fw.write(titip)
-    fw.close()
-    print()
+    tuliscsv("user",lokasi_save,tempat_variable.data_user,tempat_variable.neff_data_user)
+    tuliscsv("candi",lokasi_save,tempat_variable.data_candi,tempat_variable.neff_data_candi)
+    tuliscsv("bahan",lokasi_save,tempat_variable.data_bahanbangunan,tempat_variable.neff_data_bahanbangunan)
+   
     print("Berhasil menyimpan data di folder save/"+str(nama_folder)+" !")
