@@ -35,10 +35,14 @@ def hapusjin():
                     tempat_variable.data_user[i] = listbaru [i]
                 
                 # Menghapus candi yang pernah dibuat oleh jin yang dihapus
-                for i in range (1,tempat_variable.neff_data_candi):
+                idxhancur=1
+                while(idxhancur < tempat_variable.neff_data_candi):
                     if (tempat_variable.data_candi[i][1] == user_name):
                         hancur(i)
+                        idxhancur=1
                         tempat_variable.neff_data_candi -= 1
+                    else:
+                        idxhancur+=1
                 
                 # Menampilkan pesan berhasil menghapus jin dari alam gaib
                 print("Jin telah berhasil dihapus dari alam gaib.")
