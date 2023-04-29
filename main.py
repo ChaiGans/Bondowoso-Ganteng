@@ -1,4 +1,4 @@
-import argparse, time, os, tempat_variable
+import argparse, os, tempat_variable
 from login import login
 from logout import logout
 from summonjin import summonjin
@@ -37,11 +37,6 @@ if os.path.isdir("save")==False:
 if os.path.isdir(args.nama_folder)==False:
     print('Folder "'+folderload+'" tidak ditemukan.')
     exit()
-
-# pengambilan seed lcg awal dari waktu
-current_time = time.time()
-local_time = time.localtime(current_time)
-tempat_variable.seed_lcg = int(local_time.tm_sec)
 
 print("Loading...")
 tempat_variable.lokasi_file=str(args.nama_folder)
