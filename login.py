@@ -1,5 +1,4 @@
 import builtin,tempat_variable
-import typing
 
 def login() -> str:
     # User memasukkan username atas akun yang hendak diakses
